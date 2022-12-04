@@ -112,7 +112,6 @@ class FrontendController extends Controller
         }
         $all_work_category = WorksCategory::find($works_cat_ids);
 
-
         $blade_data = [
             'static_field_data' => $static_field_data,
             'all_header_slider' => $all_header_slider,
@@ -209,8 +208,8 @@ class FrontendController extends Controller
             $popular_categories = BlogCategory::where(['status' => 'publish','lang' => $lang])->whereIn('id',$popular_categories_id)->get();
             $blade_data['popular_categories'] = $popular_categories;
             $video_news_items = Blog::where(['status' => 'publish','lang' => $lang])->whereNotNull('video_url')->take(get_static_option('home20_video_news_section_items',4))->get();
-            
-            
+
+
             $blade_data['video_news_items'] = $video_news_items;
 
             $sport_news_categories_id = json_decode(get_static_option('home20_sports_news_section_'.$lang.'_categories'));
@@ -316,7 +315,7 @@ class FrontendController extends Controller
             $blade_data['product_categories_for_sidebar'] = $pro_cat;
         }
 
-        return view('frontend.frontend-home')->with($blade_data);
+        return view('frontend.v2.home')->with($blade_data);
 
     }
 
@@ -370,8 +369,8 @@ class FrontendController extends Controller
             $sale_price = amount_with_currency_symbol($item->sale_price);
             $regular_price = amount_with_currency_symbol($item->regular_price);
 
- 
-            
+
+
              $badge_markup = '<span class="percent-box '.$colors[$key % count($colors)].' radius-5"> '.$badge.' </span>';
 
             $short_description = $item->short_description;
@@ -383,7 +382,7 @@ class FrontendController extends Controller
 
             $product = $item;
             $view = view('frontend.pages.products.product-attribute-passing',compact('product'))->render();
-            
+
             $cart_markup_with_variant = '
               <a class="icon"title="View Details"
                  href="'.$single_route.'">
@@ -404,8 +403,8 @@ class FrontendController extends Controller
             }else{
                 $cart_markup_condition = $cart_markup_without_variant;
             }
-            
-      
+
+
 
   $output.= <<<ITEM
 
@@ -515,7 +514,6 @@ ITEM;
             return [$item->option_name => $item->option_value];
         })->toArray();
 
-
         $blade_data = [
             'home_page' => $id,
             'static_field_data' => $static_field_data,
@@ -606,9 +604,9 @@ ITEM;
             $product_categories = ProductCategory::where(['lang' => $lang, 'status' => 'publish'])->get();
             $blade_data['product_categories'] = $product_categories;
         }
-        
-        
-        
+
+
+
                 if (in_array($home_page_variant,['19'])){
             //hot deal section products
              $selected_products = json_decode(get_static_option('home_page_19_'.get_user_lang().'_todays_deal_products')) ?? [];
@@ -643,9 +641,9 @@ ITEM;
             $pro_cat = ProductCategory::with('subcategory')->where(['lang' => $lang, 'status' => 'publish'])->get();
             $blade_data['product_categories_for_sidebar'] = $pro_cat;
         }
-        
-        
-        
+
+
+
          if ($home_page_variant == '20'){
             $breaking_news =  Blog::where(['lang' => $lang, 'status' => 'publish','breaking_news' => 1])->orderBy('id', 'desc')->take(12)->get();
             $blade_data['breaking_news'] = $breaking_news;
@@ -989,11 +987,11 @@ ITEM;
     public function work_page()
     {
         $default_lang = Language::where('default', 1)->first();
-       
+
         $lang = !empty(session()->get('lang')) ? session()->get('lang') : $default_lang->slug;
-         
+
         $all_work = Works::where(['lang' => $lang])->orderBy('id', 'desc')->paginate(12);
-        
+
         $all_contain_cat = [];
         foreach ($all_work as $work) {
             $all_contain_cat[] = $work->categories_id;
@@ -1002,7 +1000,7 @@ ITEM;
 
         return view('frontend.pages.work.work')->with(['all_work' => $all_work, 'all_work_category' => $all_work_category]);
     }
-    
+
 
     public function team_page()
     {
