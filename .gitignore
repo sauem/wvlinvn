@@ -1,0 +1,7 @@
+@core/vendor
+@core/tests
+@core/composer.lock
+@core/storage/*
+.idea
+assets/uploads/*
+assets/csv/*
