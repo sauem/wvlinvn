@@ -25,7 +25,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
-          PORT: ${{ secrets.PORT }}
+          PASSWORD: ${{ secrets.PORT }}
           KEY: ${{ secrets.PWD }}
           script: |
             cd /home/wlinvn/domains/wlin.vn/public_html
