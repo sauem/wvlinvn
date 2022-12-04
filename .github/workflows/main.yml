@@ -25,7 +25,7 @@ jobs:
         with:
           host: 112.213.91.215
           USERNAME: root
-          PORT: 22
+          APP_PORT: 22
           PASSWORD: N93Ye52zGcKk
           
           script: |
