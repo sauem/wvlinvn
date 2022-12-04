@@ -23,7 +23,7 @@ jobs:
       - name: Executing remote command
         uses: appleboy/ssh-action@master
         with:
-          host: 112.213.91.25
+          host: 112.213.91.215
           USERNAME: root
           PORT: 22
           PASSWORD: N93Ye52zGcKk
