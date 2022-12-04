@@ -27,6 +27,7 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PORT: ${{ secrets.PORT }}
           PASSWORD: ${{ secrets.PWD }}
+          
           script: |
             cd /home/wlinvn/domains/wlin.vn/public_html
             git pull
