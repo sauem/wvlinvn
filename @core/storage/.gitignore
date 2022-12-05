@@ -1,2 +1,8 @@
-*
-!.gitignore
+app/*
+framework/cache/*
+framework/sessions/*
+framework/views/*
+framework/testing/*
+logs/*
+fonts/*
+

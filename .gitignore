@@ -4,3 +4,4 @@
 .idea
 assets/uploads/*
 assets/csv/*
+@core/.env
