@@ -43,6 +43,7 @@
                                             <label for="construction_quote_section_{{$lang->slug}}_button_text">{{__('Button Text')}}</label>
                                             <input type="text" name="construction_quote_section_{{$lang->slug}}_button_text" value="{{get_static_option('construction_quote_section_'.$lang->slug.'_button_text')}}" class="form-control" >
                                         </div>
+
                                     </div>
                                 @endforeach
                             </div>
