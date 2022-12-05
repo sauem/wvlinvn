@@ -209,7 +209,7 @@
                                 </div>
                                 <div class="events-left-item-2">
                                     <div class="events-left-item-2-img">
-                                        <img style="width: 100%" src="/image/homepage/img-events.svg" alt=""/>
+                                        <img style="width: 100%" src="/assets/frontend/img/event.png" alt=""/>
                                     </div>
                                     <div>
                                         <div>
@@ -231,7 +231,7 @@
                                 </div>
                                 <div class="events-left-item-2">
                                     <div class="events-left-item-2-img">
-                                        <img style="width: 100%" src="/image/homepage/img-events.svg" alt=""/>
+                                        <img style="width: 100%" src="/assets/frontend/img/event.png" alt=""/>
                                     </div>
                                     <div>
                                         <div>
@@ -253,7 +253,7 @@
                                 </div>
                                 <div class="events-left-item-2">
                                     <div class="events-left-item-2-img">
-                                        <img style="width: 100%" src="/image/homepage/img-events.svg" alt=""/>
+                                        <img style="width: 100%" src="/assets/frontend/img/event.png" alt=""/>
                                     </div>
                                     <div>
                                         <div>
@@ -275,7 +275,7 @@
                                 </div>
                                 <div class="events-left-item-2">
                                     <div class="events-left-item-2-img">
-                                        <img style="width: 100%" src="/image/homepage/img-events.svg" alt=""/>
+                                        <img style="width: 100%" src="/assets/frontend/img/event.png" alt=""/>
                                     </div>
                                     <div>
                                         <div>
