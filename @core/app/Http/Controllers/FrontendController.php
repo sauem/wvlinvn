@@ -1498,7 +1498,11 @@ ITEM;
             'all_event_category' => $all_events_category
         ]);
     }
-
+    
+    public function event_wlin_single($slug){
+        return view('frontend.v2.event.detail', ['id' => $slug]);    
+    }
+    
     public function event_booking($id)
     {
         $event = Events::find($id);
