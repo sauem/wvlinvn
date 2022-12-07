@@ -43,29 +43,10 @@
                         </div>
                         <div class="col-sm-9 pl-sm-5">
                             <div class="eventDetails-info-title">
-                                Tên sự kiện... NHÌN LẠI HÀNH TRÌNH 1 NĂM HOẠT ĐỘNG LIÊN MINH WLIN INTERCONTINENTAL
+                                {{Arr::get($event, 'ten_su_kien')}}
                             </div>
                             <div class="eventDetails-info-content mt-4">
-                                Lorem ipsum dolor sit amet consectetur. Mi sit faucibus auctor vitae felis blandit
-                                laoreet lacus. Eu ac vel tellus mauris justo.Lorem ipsum dolor sit amet consectetur. Mi
-                                sit faucibus auctor vitae felis blandit laoreet lacus. Eu ac vel tellus mauris
-                                justo.Lorem ipsum dolor sit amet consectetur. Mi sit faucibus auctor vitae felis blandit
-                                laoreet lacus. Eu ac vel tellus mauris justo.Lorem ipsum dolor sit amet consectetur. Mi
-                                sit faucibus auctor vitae felis blandit laoreet lacus Lorem ipsum dolor sit amet
-                                consectetur. Mi sit faucibus auctor vitae felis blandit laoreet lacus. Eu ac vel tellus
-                                mauris justo.Lorem ipsum dolor sit amet consectetur. Mi sit faucibus auctor vitae felis
-                                blandit laoreet lacus. Eu ac vel tellus mauris justo.Lorem ipsum dolor sit amet
-                                consectetur. Mi sit faucibus auctor vitae felis blandit laoreet lacus. Eu ac vel tellus
-                                mauris justo.Lorem ipsum dolor sit amet consectetur. Mi sit faucibus auctor vitae felis
-                                blandit laoreet lacus <br />
-                                Lorem ipsum dolor sit amet consectetur. Mi sit faucibus auctor vitae felis blandit
-                                laoreet lacus. Eu ac vel tellus mauris justo.Lorem ipsum dolor sit amet consectetur. Mi
-                                sit faucibus auctor vitae felis blandit laoreet lacus. Eu ac vel tellus mauris
-                                justo.Lorem ipsum dolor sit amet consectetur. Mi sit faucibus auctor vitae felis blandit
-                                laoreet lacus. Eu ac vel tellus mauris justo.Lorem ipsum dolor sit amet consectetur. Mi
-                                sit faucibus auctor vitae felis blandit laoreet lacus Lorem ipsum dolor sit amet
-                                consectetur. Mi sit faucibus auctor vitae felis blandit laoreet lacus. Eu ac vel tellus
-                                mauris justo.
+                               {!!Arr::get($event, 'noi_dung')!!}
                             </div>
                         </div>
                     </div>
