@@ -5,7 +5,7 @@
 
             <section class="eventDetails-background mt-4">
                 <div class="container">
-                    <img class="" src="/image/event-details/background.svg" alt="">
+                    <img class="img-fluid" src="https://api.wlin.com.vn{{Arr::get($detail, 'hinh_anh')}}" alt="{{Arr::get($detail, 'ten_su_kien')}}">
                 </div>
             </section>
 
