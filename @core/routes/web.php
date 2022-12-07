@@ -241,6 +241,7 @@ Route::group(['middleware' => ['setlang:frontend', 'globalVariable', 'maintains_
     //events
     Route::get($events_page_slug , 'FrontendController@events')->name('frontend.events');
     Route::get($events_page_slug.'/{slug}', 'FrontendController@events_single')->name('frontend.events.single');
+    Route::get($events_page_slug.'/wlin/{slug}', 'FrontendController@events_wlin_single')->name('frontend.events.wlin.single');
     Route::get($events_page_slug.'-category/{id}/{any?}', 'FrontendController@events_category')->name('frontend.events.category');
     Route::get($events_page_slug.'-search', 'FrontendController@events_search')->name('frontend.events.search');
     Route::get($events_page_slug.'-booking/{id}', 'FrontendController@event_booking')->name('frontend.event.booking');
