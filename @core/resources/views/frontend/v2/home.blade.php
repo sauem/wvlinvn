@@ -205,7 +205,7 @@
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 45px">
-                    <a class="button-all">Xem tất cả</a>
+                    <a href="/events" class="button-all">Xem tất cả</a>
                 </div>
             </div>
             <div class="col mt-sm-0 mt-5 col-news-2">
@@ -366,7 +366,7 @@
                                     v-if="event.timeTo">- @{{ event.timeTo }}</span>
                         </p>
                         <p class="events-left-item-desc">
-                            <a :href="`/events/${event.key}`"> @{{event.name}}</a>
+                            <a :href="`/events/wlin/${event.key}`"> @{{event.name}}</a>
                         </p>
                     </div>
                 </div>
