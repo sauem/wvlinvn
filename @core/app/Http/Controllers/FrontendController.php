@@ -1499,7 +1499,7 @@ ITEM;
         ]);
     }
     
-    public function event_wlin_single($slug){
+    public function events_wlin_single($slug){
         return view('frontend.v2.event.detail', ['id' => $slug]);    
     }
     
