@@ -46,7 +46,7 @@
                                 {{Arr::get($event, 'ten_su_kien')}}
                             </div>
                             <div class="eventDetails-info-content mt-4">
-                               {!!Arr::get($event, 'noi_dung')!!}
+                              ----
                             </div>
                         </div>
                     </div>
