@@ -25,7 +25,7 @@ function EventDetail($eventId){
         curl_close($ch);
         return json_decode($output, TRUE);
     }cache(\Exception $e){
-        throw new \Exception($e->getMessage())
+        throw new \Exception($e->getMessage());
     }
 }
 
