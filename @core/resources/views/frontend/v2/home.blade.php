@@ -197,100 +197,11 @@
             <div class="col col-news-1">
                 <div class="events-left-header">
                     <i class="fa fa-star" style="color: #ffc122; font-size: 20px"></i>
-                    <span class="events-left-title">LỊCH SỰ KIỆN SẮP TỚI</span>
+                    <span class="events-left-title">LỊCH SỰ KIỆN</span>
                 </div>
                 <div class="table-wrapper-scroll-y my-custom-scrollbar">
                     <div class="table mb-0">
-                        <div>
-                            <div class="events-left-item">
-                                <div style="width: 10%">
-                                    <p class="events-left-item-date">26</p>
-                                    <p class="events-left-item-month">Tháng 11</p>
-                                </div>
-                                <div class="events-left-item-2">
-                                    <div class="events-left-item-2-img">
-                                        <img style="width: 100%" src="/assets/frontend/img/event.png" alt=""/>
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <p class="events-left-item-content">
-                                                Diễn ra vào lúc 8:00 - 14:00
-                                            </p>
-                                            <p class="events-left-item-desc">
-                                                Goldsun Media Group đồng hành cùng sự thành công của
-                                                giải thưởng Top 100 Nữ...
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="events-left-item">
-                                <div style="width: 10%">
-                                    <p class="events-left-item-date">26</p>
-                                    <p class="events-left-item-month">Tháng 11</p>
-                                </div>
-                                <div class="events-left-item-2">
-                                    <div class="events-left-item-2-img">
-                                        <img style="width: 100%" src="/assets/frontend/img/event.png" alt=""/>
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <p class="events-left-item-content">
-                                                Diễn ra vào lúc 8:00 - 14:00
-                                            </p>
-                                            <p class="events-left-item-desc">
-                                                Goldsun Media Group đồng hành cùng sự thành công của
-                                                giải thưởng Top 100 Nữ...
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="events-left-item">
-                                <div style="width: 10%">
-                                    <p class="events-left-item-date">26</p>
-                                    <p class="events-left-item-month">Tháng 11</p>
-                                </div>
-                                <div class="events-left-item-2">
-                                    <div class="events-left-item-2-img">
-                                        <img style="width: 100%" src="/assets/frontend/img/event.png" alt=""/>
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <p class="events-left-item-content">
-                                                Diễn ra vào lúc 8:00 - 14:00
-                                            </p>
-                                            <p class="events-left-item-desc">
-                                                Goldsun Media Group đồng hành cùng sự thành công của
-                                                giải thưởng Top 100 Nữ...
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="events-left-item">
-                                <div style="width: 10%">
-                                    <p class="events-left-item-date">26</p>
-                                    <p class="events-left-item-month">Tháng 11</p>
-                                </div>
-                                <div class="events-left-item-2">
-                                    <div class="events-left-item-2-img">
-                                        <img style="width: 100%" src="/assets/frontend/img/event.png" alt=""/>
-                                    </div>
-                                    <div>
-                                        <div>
-                                            <p class="events-left-item-content">
-                                                Diễn ra vào lúc 8:00 - 14:00
-                                            </p>
-                                            <p class="events-left-item-desc">
-                                                Goldsun Media Group đồng hành cùng sự thành công của
-                                                giải thưởng Top 100 Nữ...
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div id="list-event"></div>
                     </div>
                 </div>
                 <div style="text-align: center; margin-top: 45px">
@@ -320,93 +231,93 @@
                     @endforeach
                 @endif
             </div>
-{{--            <div class="col col-news-3">--}}
-{{--                <div class="news-header">TIN TỨC NỔI BẬT</div>--}}
-{{--                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 my-4">--}}
-{{--                    <div class="col my-3">--}}
-{{--                        <div class="news-item">--}}
-{{--                            <img src="/image/homepage/img-news.svg" class="news-img" alt=""/>--}}
-{{--                            <div style="padding: 10px 0px">--}}
-{{--                                <a class="news-item-title">--}}
-{{--                                    Nữ lãnh đạo Trần Thị Yali: "Giải thưởng Top 100 Nữ...--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                            <div class="news-item-desc">--}}
-{{--                                Doanh nhân Trần Thị Yali là một trong những cái tên được--}}
-{{--                                vinh danh tại giải th...--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+            {{--            <div class="col col-news-3">--}}
+            {{--                <div class="news-header">TIN TỨC NỔI BẬT</div>--}}
+            {{--                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 my-4">--}}
+            {{--                    <div class="col my-3">--}}
+            {{--                        <div class="news-item">--}}
+            {{--                            <img src="/image/homepage/img-news.svg" class="news-img" alt=""/>--}}
+            {{--                            <div style="padding: 10px 0px">--}}
+            {{--                                <a class="news-item-title">--}}
+            {{--                                    Nữ lãnh đạo Trần Thị Yali: "Giải thưởng Top 100 Nữ...--}}
+            {{--                                </a>--}}
+            {{--                            </div>--}}
+            {{--                            <div class="news-item-desc">--}}
+            {{--                                Doanh nhân Trần Thị Yali là một trong những cái tên được--}}
+            {{--                                vinh danh tại giải th...--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
 
-{{--                </div>--}}
-{{--                <div style="text-align: center; margin-top: 45px">--}}
-{{--                    <a class="button-all">Xem tất cả</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col col-news-4">--}}
-{{--                <div class="news-header">TIN TỨC NỔI BẬT</div>--}}
-{{--                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 my-4">--}}
-{{--                    <div class="col my-3">--}}
-{{--                        <div class="news-item">--}}
-{{--                            <img src="/image/homepage/img-news.svg" class="news-img" alt=""/>--}}
-{{--                            <div style="padding: 10px 0px">--}}
-{{--                                <a class="news-item-title">--}}
-{{--                                    Nữ lãnh đạo Trần Thị Yali: "Giải thưởng Top 100 Nữ...--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                            <div class="news-item-desc">--}}
-{{--                                Doanh nhân Trần Thị Yali là một trong những cái tên được--}}
-{{--                                vinh danh tại giải th...--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="col my-3">--}}
-{{--                        <div class="news-item">--}}
-{{--                            <img src="/image/homepage/img-news.svg" class="news-img" alt=""/>--}}
-{{--                            <div style="padding: 10px 0px">--}}
-{{--                                <a class="news-item-title">--}}
-{{--                                    Nữ lãnh đạo Trần Thị Yali: "Giải thưởng Top 100 Nữ...--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                            <div class="news-item-desc">--}}
-{{--                                Doanh nhân Trần Thị Yali là một trong những cái tên được--}}
-{{--                                vinh danh tại giải th...--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="col my-3">--}}
-{{--                        <div class="news-item">--}}
-{{--                            <img src="/image/homepage/img-news.svg" class="news-img" alt=""/>--}}
-{{--                            <div style="padding: 10px 0px">--}}
-{{--                                <a class="news-item-title">--}}
-{{--                                    Nữ lãnh đạo Trần Thị Yali: "Giải thưởng Top 100 Nữ...--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                            <div class="news-item-desc">--}}
-{{--                                Doanh nhân Trần Thị Yali là một trong những cái tên được--}}
-{{--                                vinh danh tại giải th...--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="col my-3">--}}
-{{--                        <div class="news-item">--}}
-{{--                            <img src="/image/homepage/img-news.svg" class="news-img" alt=""/>--}}
-{{--                            <div style="padding: 10px 0px">--}}
-{{--                                <a class="news-item-title">--}}
-{{--                                    Nữ lãnh đạo Trần Thị Yali: "Giải thưởng Top 100 Nữ...--}}
-{{--                                </a>--}}
-{{--                            </div>--}}
-{{--                            <div class="news-item-desc">--}}
-{{--                                Doanh nhân Trần Thị Yali là một trong những cái tên được--}}
-{{--                                vinh danh tại giải th...--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div style="text-align: center; margin-top: 45px">--}}
-{{--                    <a class="button-all">Xem tất cả</a>--}}
-{{--                </div>--}}
-{{--            </div>--}}
+            {{--                </div>--}}
+            {{--                <div style="text-align: center; margin-top: 45px">--}}
+            {{--                    <a class="button-all">Xem tất cả</a>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+            {{--            <div class="col col-news-4">--}}
+            {{--                <div class="news-header">TIN TỨC NỔI BẬT</div>--}}
+            {{--                <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2 my-4">--}}
+            {{--                    <div class="col my-3">--}}
+            {{--                        <div class="news-item">--}}
+            {{--                            <img src="/image/homepage/img-news.svg" class="news-img" alt=""/>--}}
+            {{--                            <div style="padding: 10px 0px">--}}
+            {{--                                <a class="news-item-title">--}}
+            {{--                                    Nữ lãnh đạo Trần Thị Yali: "Giải thưởng Top 100 Nữ...--}}
+            {{--                                </a>--}}
+            {{--                            </div>--}}
+            {{--                            <div class="news-item-desc">--}}
+            {{--                                Doanh nhân Trần Thị Yali là một trong những cái tên được--}}
+            {{--                                vinh danh tại giải th...--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                    <div class="col my-3">--}}
+            {{--                        <div class="news-item">--}}
+            {{--                            <img src="/image/homepage/img-news.svg" class="news-img" alt=""/>--}}
+            {{--                            <div style="padding: 10px 0px">--}}
+            {{--                                <a class="news-item-title">--}}
+            {{--                                    Nữ lãnh đạo Trần Thị Yali: "Giải thưởng Top 100 Nữ...--}}
+            {{--                                </a>--}}
+            {{--                            </div>--}}
+            {{--                            <div class="news-item-desc">--}}
+            {{--                                Doanh nhân Trần Thị Yali là một trong những cái tên được--}}
+            {{--                                vinh danh tại giải th...--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                    <div class="col my-3">--}}
+            {{--                        <div class="news-item">--}}
+            {{--                            <img src="/image/homepage/img-news.svg" class="news-img" alt=""/>--}}
+            {{--                            <div style="padding: 10px 0px">--}}
+            {{--                                <a class="news-item-title">--}}
+            {{--                                    Nữ lãnh đạo Trần Thị Yali: "Giải thưởng Top 100 Nữ...--}}
+            {{--                                </a>--}}
+            {{--                            </div>--}}
+            {{--                            <div class="news-item-desc">--}}
+            {{--                                Doanh nhân Trần Thị Yali là một trong những cái tên được--}}
+            {{--                                vinh danh tại giải th...--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                    <div class="col my-3">--}}
+            {{--                        <div class="news-item">--}}
+            {{--                            <img src="/image/homepage/img-news.svg" class="news-img" alt=""/>--}}
+            {{--                            <div style="padding: 10px 0px">--}}
+            {{--                                <a class="news-item-title">--}}
+            {{--                                    Nữ lãnh đạo Trần Thị Yali: "Giải thưởng Top 100 Nữ...--}}
+            {{--                                </a>--}}
+            {{--                            </div>--}}
+            {{--                            <div class="news-item-desc">--}}
+            {{--                                Doanh nhân Trần Thị Yali là một trong những cái tên được--}}
+            {{--                                vinh danh tại giải th...--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--                <div style="text-align: center; margin-top: 45px">--}}
+            {{--                    <a class="button-all">Xem tất cả</a>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
             <!-- </div> -->
         </div>
     </section>
@@ -437,4 +348,72 @@
             </div>
         </section>
     @endif
+    <template id="event-item">
+        <div v-for="event in events" class="events-left-item">
+            <div style="width: 10%">
+                <p class="events-left-item-date">@{{event.day}}</p>
+                <p class="events-left-item-month">Tháng @{{event.month}}</p>
+            </div>
+            <div class="events-left-item-2">
+                <div class="events-left-item-2-img">
+                    <img style="width: 100%" :src="event.image" alt=""/>
+                </div>
+                <div>
+                    <div>
+                        <p v-if="event.timeTo"
+                           class="events-left-item-content">
+                            Diễn ra vào lúc <span v-if="event.timeFrom">@{{  event.timeFrom }}</span> <span
+                                    v-if="event.timeTo">- @{{ event.timeTo }}</span>
+                        </p>
+                        <p class="events-left-item-desc">
+                            <a :href="`/events/${event.key}`"> @{{event.name}}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
 @stop
+@push('vue')
+
+    <script>
+        const app = Vue.createApp({
+            template: '#event-item',
+            data() {
+                return {
+                    events: [],
+                    paginate: {}
+                }
+            },
+            methods: {
+                async onGetList(params = {page: 1}) {
+                    try {
+                        const response = await API.EVENT.LIST(params);
+                        this.events = response.data.map(item => {
+                            const timeFrom = item.noi_dung.shift();
+                            const timeTo = item.noi_dung.shift();
+                            return {
+                                key: item._id,
+                                name: item.ten_su_kien,
+                                day: getDay(item.ngay_su_kien, 'DD'),
+                                month: getDay(item.ngay_su_kien, 'MM'),
+                                timeFrom: timeFrom && getDay(timeFrom.thoi_gian, 'HH:ss'),
+                                timeTo: timeTo && getDay(timeTo.thoi_gian, 'HH:ss'),
+                                image: IMG(item.hinh_anh)
+                            }
+                        });
+                    } catch (e) {
+                        console.log("E", e);
+                    }
+                },
+                async onChange(pageNum = 1) {
+                    await this.onGetList({page: pageNum});
+                }
+            },
+            async created() {
+                await this.onGetList();
+            },
+        });
+        app.mount('#list-event');
+    </script>
+@endpush
