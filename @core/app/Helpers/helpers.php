@@ -13,7 +13,6 @@ use App\Page;
 use Illuminate\Support\Facades\Session;
 
 function EventDetail($eventId){
-    try{
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://api.wlin.com.vn/api/62de1bd5fcc56b09934ee278/wlin_events/$eventId?access_token=5237d862159d2cb01bfd05e4cdd5310c");
         // SSL important
@@ -24,9 +23,6 @@ function EventDetail($eventId){
         $output = curl_exec($ch);
         curl_close($ch);
         return json_decode($output, TRUE);
-    }cache(\Exception $e){
-        throw new \Exception($e->getMessage());
-    }
 }
 
 function active_menu($url)
