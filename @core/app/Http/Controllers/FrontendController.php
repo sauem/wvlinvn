@@ -1441,7 +1441,7 @@ ITEM;
 
         $all_events = Events::where(['status' => 'publish', 'lang' => $lang])->orderBy('id', 'desc')->paginate(get_static_option('site_events_post_items'));
         $all_event_category = EventsCategory::where(['status' => 'publish', 'lang' => $lang])->get();
-        return view('frontend.pages.events.event')->with([
+        return view('frontend.v2.event.index')->with([
             'all_events' => $all_events,
             'all_event_category' => $all_event_category,
         ]);
