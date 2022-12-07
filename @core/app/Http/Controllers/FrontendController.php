@@ -1500,6 +1500,9 @@ ITEM;
     }
     
     public function event_wlin_single($slug){
+        $event = EventDetail($slug);
+        dd($event);
+        
         return view('frontend.v2.event.detail', ['id' => $slug]);    
     }
     
