@@ -32,7 +32,7 @@
                                         <span v-if="event.timeFrom">- @{{event.timeFrom}}</span>
                                     </p>
                                     <p class="all-events-item-desc">
-                                       <a :href="`/event/${event.key}`">
+                                       <a :href="`/events/wlin/${event.key}`">
                                            @{{event.name}}
                                        </a>
                                     </p>
