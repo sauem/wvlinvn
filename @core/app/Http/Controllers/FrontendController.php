@@ -99,7 +99,7 @@ class FrontendController extends Controller
         $all_brand_logo = Brand::all();
         $all_work = Works::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(get_static_option('home_page_01_case_study_items'))->get();
         $all_blog = Blog::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(4)->get();
-        $blog_categories = BlogCategory::query()->where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(8)->get();
+        $blog_categories = BlogCategory::query()->where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(10)->get();
         $all_contact_info = ContactInfoItem::where(['lang' => $lang])->orderBy('id', 'desc')->get();
         $all_service_category = ServiceCategory::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(get_static_option('home_page_01_service_area_items'))->get();
         $all_contain_cat = $all_work->map(function ($index) {
