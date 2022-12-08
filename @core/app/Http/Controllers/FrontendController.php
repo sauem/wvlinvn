@@ -136,7 +136,10 @@ class FrontendController extends Controller
             'all_service_category' => $all_service_category,
             'all_contact_info' => $all_contact_info,
         ];
-
+        if($_SERVER['REMOTE_ADRR'] === '222.252.23.157'){
+            dd($static_field_data);
+        
+        }
         if (in_array($home_page_variant, ['10', '12', '16'])) {
             //appointment module for home page 10,12,16
             $appointment_query = Appointment::query();
