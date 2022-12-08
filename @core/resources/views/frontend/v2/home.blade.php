@@ -67,7 +67,7 @@
                 <div>
                     <label class="talkshow-header">WLIN TV - WOMEN LEADER TALKSHOW</label>
                 </div>
-                <div class="row row-mobile">
+                <div class="row">
                     <div class="owl-carousel owl-theme owl-loaded owl-drag">
                         <div class="owl-stage-outer">
                             <div class="owl-stage">
