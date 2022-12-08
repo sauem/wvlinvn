@@ -51,11 +51,11 @@
                 <div class="col-sm-6 col-xs-9 about-content">
                     <div>
                         <label class="about-title">
-                            {{filter_static_option_value('construction_header_section_'.$user_select_lang_slug.'_title',$static_field_data)}}
+                            {{filter_static_option_value('construction_about_section_'.$user_select_lang_slug.'_title',$static_field_data)}}
                         </label>
                     </div>
                     <div class="about-desc">
-                        {!! filter_static_option_value('construction_header_section_'.$user_select_lang_slug.'_description',$static_field_data) !!}
+                        {!! filter_static_option_value('construction_about_section_'.$user_select_lang_slug.'_description',$static_field_data) !!}
                     </div>
                 </div>
             </div>
