@@ -115,7 +115,7 @@
         </section>
     @endif
     @if(!empty($blog_categories))
-        <section class="world">
+        <section class="world py-4">
             <div>
                 <label class="world-header">WLIN WORLD</label>
             </div>
@@ -125,7 +125,7 @@
                         <?php
                         $urlImg = get_attachment_image_by_id($category->image, 'full');
                         ?>
-                    <div class="col pb-0">
+                    <div class="col p-0">
                         <a href="/">
                             <div class="world-item">
                                 <img class="world-item-img" src="{{Arr::get($urlImg, 'img_url')}}" alt=""/>
