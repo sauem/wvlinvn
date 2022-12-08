@@ -125,7 +125,7 @@
                         <?php
                         $urlImg = get_attachment_image_by_id($category->image, 'full');
                         ?>
-                    <div class="col mb-4">
+                    <div class="col pb-0">
                         <a href="/">
                             <div class="world-item">
                                 <img class="world-item-img" src="{{Arr::get($urlImg, 'img_url')}}" alt=""/>
