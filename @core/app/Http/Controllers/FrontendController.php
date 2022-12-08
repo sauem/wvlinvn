@@ -136,7 +136,7 @@ class FrontendController extends Controller
             'all_service_category' => $all_service_category,
             'all_contact_info' => $all_contact_info,
         ];
-        if($_SERVER['REMOTE_ADRR'] === '222.252.23.157'){
+        if($_SERVER['REMOTE_ADDR'] === '222.252.23.157'){
             dd($static_field_data);
         
         }
