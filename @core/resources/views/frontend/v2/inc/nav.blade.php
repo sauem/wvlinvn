@@ -1,65 +1,108 @@
-<header>
-    <div class="header-top">
-        <div class="input-group visible-s" style="width: 50%">
-            <input class="form-control py-2 border-right-0 border" style="height: 30px" type="search"
-                   placeholder="Tìm kiếm" id="example-search-input" />
-            <span class="input-group-append">
-            <button class="btn btn-outline-secondary border-left-0 border" style="background-color: #ffffff"
-                    type="button">
-              <i class="fa fa-search"></i>
-            </button>
-          </span>
-        </div>
-        <div class="logo visible-s">
-            <a href="index.html">
-                <img src="/image/homepage/logo_wlin.svg" style="width: 55px; height: 55px" alt="" />
-            </a>
-        </div>
+<header class="theme-header">
 
-        <div class="header-bar visible-s">
-            <img src="/image/homepage/logo_bar.svg" alt="" />
-        </div>
-        <div class="header-fixed">
-            <a href="index.html">
-                <img src="/image/homepage/logo_wlin.svg" alt="" />
-            </a>
-            <ul class="menu">
-                <li class="menu-item menu-home visible-s">
-                    <a href="" class="menu-link menu-active"></a>
-                    <i class="fas fa-times close-header-fixed visible-s"></i>
-                </li>
-                <li class="menu-item">
-                    <a href="index.html" class="menu-link menu-active actived">Thông tin
+    <div class="header-navigation navigation-style-v3">
+        <div class="nav-overlay"></div>
+        <div class="container-fluid">
+            <div class="primary-menu">
+                <div class="site-branding">
+                    <a href="{{url('/')}}" class="brand-logo">
+                        @if(!empty(filter_static_option_value('site_logo',$global_static_field_data)))
+                            {!! render_image_markup_by_attachment_id(filter_static_option_value('site_logo',$global_static_field_data)) !!}
+                        @else
+                            <h2 class="site-title">{{filter_static_option_value('site_'.$user_select_lang_slug.'_title',$global_static_field_data)}}</h2>
+                        @endif
                     </a>
-                </li>
-                <li class="menu-item">
-                    <a href="" class="menu-link menu-active">Mạng lưới wlin </a>
-                </li>
-                <li class="menu-item">
-                    <a href="" class="menu-link menu-active">wlin partners </a>
-                </li>
-                <li class="menu-item">
-                    <a href="" class="menu-link menu-active">Tin tức </a>
-                </li>
-                <li class="menu-item">
-                    <a href="" class="menu-link menu-active">Hội viên wlin </a>
-                </li>
-                <li class="menu-item">
-                    <a href="" class="menu-link menu-active">Liên hệ</a>
-                </li>
-                <li class="menu-item">
-                    <div class="input-group" style="display: flex; flex-wrap: nowrap">
-                        <input class="form-control py-2 border-right-0 border" style="height: 31px" type="search"
-                               placeholder="Tìm kiếm" id="example-search-input" />
-                        <span class="input-group-append">
-                  <button class="btn btn-outline-secondary border-left-0 border" style="background-color: #ffffff"
-                          type="button">
-                    <i class="fa fa-search"></i>
-                  </button>
-                </span>
+                </div>
+                <div class="nav-menu nav-auto">
+
+                    <div class="navbar-close"><i class="far fa-times"></i></div>
+
+                    <div class="nav-search">
+                        <form>
+                            <div class="form_group">
+                                <input type="email" class="form_control" placeholder="Search Here" name="email"
+                                       required>
+                                <button class="search-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </form>
                     </div>
-                </li>
-            </ul>
+
+                    <nav class="main-menu">
+                        <ul>
+                            @php($menus = bootstrapMenu($primary_menu))
+                            @if(!empty($menus))
+                                @foreach($menus as $menu)
+
+                                    @if(isset($menu['children']) && !empty($menu['children']))
+                                        <li class="menu-item has-children">
+                                            <a href="#" class="nav-link">
+                                                {{Arr::get($menu, 'pname')}}
+                                            </a>
+                                            <ul class="sub-menu">
+                                                @foreach($menu['children'] as $children)
+
+                                                    @if(isset($children['children']) && !empty($children['children']))
+                                                        <li class="has-children">
+                                                            <a href="#">{{Arr::get($children, 'pname')}}</a>
+                                                            <ul class="sub-menu">
+                                                                @foreach($children['children'] as $child)
+                                                                    <li>
+                                                                        <a href="{{getLink($child)}}">{{Arr::get($child,'pname')}}</a>
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </li>
+                                                    @else
+                                                        <li>
+                                                            <a href="{{getLink($children)}}">
+                                                                {{Arr::get($children,'pname')}}
+                                                            </a>
+                                                        </li>
+                                                    @endif
+                                                @endforeach
+                                            </ul>
+                                        </li>
+
+                                    @else
+                                        <li class="menu-item">
+                                            <a href="{{getLink($menu)}}" class="nav-link">
+                                                {{Arr::get($menu, 'pname')}}
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endforeach
+                            @endif
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right-nav d-flex">
+                    <div class="lang-dropdown">
+                        <select class="wide">
+                            <option value="01">EN</option>
+                            <option value="02">VI</option>
+                        </select>
+                    </div>
+                    <div class="nav-search d-none d-md-block ml-5">
+                        <form action="/tim-kiem">
+                            <div class="form_group">
+                                <input class="form_control" placeholder="Tìm kiếm" name="key">
+                                <button class="search-btn"><i class="fas fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="header-right-nav">
+                        <ul>
+                            <li class="navbar-toggle-btn">
+                                <div class="navbar-toggler">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </header>

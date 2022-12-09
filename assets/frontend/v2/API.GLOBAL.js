@@ -47,6 +47,9 @@ const getDay = (time, format = 'DD/MM/YYYY') => {
 }
 
 const IMG = (path) => {
+    if (!path) {
+        return '/assets/frontend/img/placeholder.svg';
+    }
     return `https://api.wlin.com.vn${path}`;
 }
 
@@ -60,3 +63,4 @@ const groupBy = (items, key) => items.reduce(
     }),
     {},
 );
+

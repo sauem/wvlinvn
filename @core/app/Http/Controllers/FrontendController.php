@@ -99,7 +99,8 @@ class FrontendController extends Controller
         $all_brand_logo = Brand::all();
         $all_work = Works::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(get_static_option('home_page_01_case_study_items'))->get();
         $all_blog = Blog::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(4)->get();
-        $blog_categories = BlogCategory::query()->where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(10)->get();
+        $blog_categories = BlogCategory::query()->where(['lang' => $lang, 'status' => 'publish', 'type' => 'blog'])
+            ->orderBy('id', 'desc')->take(10)->get();
         $all_contact_info = ContactInfoItem::where(['lang' => $lang])->orderBy('id', 'desc')->get();
         $all_service_category = ServiceCategory::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(get_static_option('home_page_01_service_area_items'))->get();
         $all_contain_cat = $all_work->map(function ($index) {
@@ -118,6 +119,15 @@ class FrontendController extends Controller
         $all_gallery_images = VideoGallery::query()
             ->where(['status' => 'publish'])
             ->limit(24)->get();
+        $memberCate = BlogCategory::query()
+            ->where('type', '=', 'member')
+            ->where('lang', '=', get_user_lang())
+            ->pluck('id');
+        $members = Blog::query()->whereIn('blog_categories_id', $memberCate)
+            ->limit(24)
+            ->orderBy('id', 'DESC')
+            ->get();
+
         $blade_data = [
             'static_field_data' => $static_field_data,
             'all_header_slider' => $all_header_slider,
@@ -130,15 +140,16 @@ class FrontendController extends Controller
             'blog_categories' => $blog_categories,
             'all_price_plan' => $all_price_plan,
             'all_team_members' => $all_team_members,
+            'members' => $members,
             'all_brand_logo' => $all_brand_logo,
             'all_work_category' => $all_work_category,
             'all_work' => $all_work,
             'all_service_category' => $all_service_category,
             'all_contact_info' => $all_contact_info,
         ];
-        if($_SERVER['REMOTE_ADDR'] === '222.252.23.157'){
+        if ($_SERVER['REMOTE_ADDR'] === '222.252.23.157') {
             dd($static_field_data);
-        
+
         }
         if (in_array($home_page_variant, ['10', '12', '16'])) {
             //appointment module for home page 10,12,16
@@ -1501,12 +1512,13 @@ ITEM;
             'all_event_category' => $all_events_category
         ]);
     }
-    
-    public function events_wlin_single($slug){
+
+    public function events_wlin_single($slug)
+    {
         $event = EventDetail($slug);
-        return view('frontend.v2.event.detail', ['id' => $slug, 'event' => $event]);    
+        return view('frontend.v2.event.detail', ['id' => $slug, 'event' => $event]);
     }
-    
+
     public function event_booking($id)
     {
         $event = Events::find($id);

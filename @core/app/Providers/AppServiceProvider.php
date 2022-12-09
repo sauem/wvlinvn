@@ -7,6 +7,7 @@ use App\Helpers\CartHelper;
 use App\Helpers\EmailTemplateHelper;
 use App\Helpers\InstagramFeedHelper;
 use App\Helpers\WishlistHelper;
+use Dompdf\Helpers;
 use Illuminate\Http\Response;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;

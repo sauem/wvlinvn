@@ -179,7 +179,7 @@ class BlogController extends Controller
             'name' => 'required|string|max:191|unique:blog_categories',
             'lang' => 'required|string|max:191',
             'status' => 'required|string|max:191',
-            'image' => 'nullable|string|max:191'
+            'image' => 'nullable|string|max:191',
         ]);
 
         BlogCategory::create($request->all());
