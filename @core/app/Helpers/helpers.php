@@ -2820,7 +2820,7 @@ function linkCategory($category)
 
 function blogLink($blog)
 {
-    return '/';
+    return "/blog/{$blog->slug}";
 }
 
 function getMemberLink($member)

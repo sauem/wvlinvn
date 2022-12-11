@@ -19,7 +19,6 @@
                         @foreach($blogs as $blog)
                             @php
                                 $img = get_attachment_image_by_id($blog->image,'full');
-
                             @endphp
                             <div class="blog-item">
                                 <div class="row align-items-center">

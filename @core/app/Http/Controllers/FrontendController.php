@@ -831,8 +831,8 @@ ITEM;
         $all_category = BlogCategory::where(['status' => 'publish', 'lang' => $lang])->orderBy('id', 'desc')->get();
 
         $all_related_blog = Blog::where(['lang' => $lang, 'status' => 'publish'])->Where('blog_categories_id', $blog_post->blog_categories_id)->orderBy('id', 'desc')->take(6)->get();
-
-        return view('frontend.pages.blog.blog-single')->with([
+        //frontend.pages.blog.blog-single
+        return view('frontend.v2.blog.detail')->with([
             'blog_post' => $blog_post,
             'all_categories' => $all_category,
             'all_recent_blogs' => $all_recent_blogs,
