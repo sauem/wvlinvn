@@ -12,7 +12,10 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <h5 class="text-main text-left line-bottom">TIN TỨC MỚI NHẤT</h5>
+                <div class="ads mb-4">
+                    <img src="/assets/frontend/img/ads-sidebar.jpeg" class="img-fluid w-100"/>
+                </div>
+                <h5 class="text-main text-center line-bottom">CÓ THỂ BẠN QUAN TÂM</h5>
 
                 <div class="list-blog">
                     @if(!empty($all_recent_blogs))

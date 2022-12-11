@@ -69,16 +69,23 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical; }
 
+.theme-header .header-navigation {
+  background-color: #79018C; }
+  .theme-header .header-navigation .nice-select:after {
+    color: white; }
+  .theme-header .header-navigation li, .theme-header .header-navigation a, .theme-header .header-navigation p, .theme-header .header-navigation span {
+    color: white !important; }
+
 .nav-search form {
   position: relative; }
   .nav-search form .form_control {
     border: 1px solid #ccc;
-    padding: 0 20px;
-    border-radius: 20px; }
+    padding: 0 10px;
+    width: 180px; }
   .nav-search form .search-btn {
     background: none;
     position: absolute;
-    right: 20px;
+    right: 10px;
     top: 0; }
 
 .slider-section {

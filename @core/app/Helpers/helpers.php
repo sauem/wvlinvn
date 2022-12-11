@@ -2815,7 +2815,7 @@ function getLink($menu = [])
 
 function linkCategory($category)
 {
-    return '/';
+    return "/blog/{$category->slug}";
 }
 
 function blogLink($blog)

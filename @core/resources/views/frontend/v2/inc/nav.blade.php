@@ -2,7 +2,7 @@
 
     <div class="header-navigation navigation-style-v3">
         <div class="nav-overlay"></div>
-        <div class="container-fluid">
+        <div class="container">
             <div class="primary-menu">
                 <div class="site-branding">
                     <a href="{{url('/')}}" class="brand-logo">
@@ -75,14 +75,14 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="header-right-nav d-flex">
+                <div class="header-right-nav d-flex align-items-center">
                     <div class="lang-dropdown">
                         <select class="wide">
                             <option value="01">EN</option>
                             <option value="02">VI</option>
                         </select>
                     </div>
-                    <div class="nav-search d-none d-md-block ml-5">
+                    <div class="nav-search d-none d-md-block ml-3">
                         <form action="/tim-kiem">
                             <div class="form_group">
                                 <input class="form_control" placeholder="Tìm kiếm" name="key">

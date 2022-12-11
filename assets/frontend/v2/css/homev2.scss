@@ -1,5 +1,6 @@
 $mainColor: #79018C;
 $purple: #C70A80;
+
 .bg-light-purple {
   background: rgba(121, 1, 140, 0.1);
 }
@@ -81,21 +82,29 @@ $purple: #C70A80;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-
+.theme-header .header-navigation {
+  background-color: $mainColor;
+  .nice-select:after{
+    color: white;
+  }
+  li, a, p, span{
+    color: white!important;
+  }
+}
 .nav-search {
   form {
     position: relative;
 
     .form_control {
       border: 1px solid #ccc;
-      padding: 0 20px;
-      border-radius: 20px;
+      padding: 0 10px;
+      width: 180px;
     }
 
     .search-btn {
       background: none;
       position: absolute;
-      right: 20px;
+      right: 10px;
       top: 0;
     }
   }
