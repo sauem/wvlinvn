@@ -15,6 +15,27 @@ $purple: #C70A80;
 .text-main {
   color: $mainColor;
 }
+.btn-outline-primary {
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  gap: 8px;
+  width: 280px;
+  height: 56px;
+  background: #FFFFFF;
+  border: 2px solid $mainColor;
+  border-radius: 56px;
+  font-size: 18px;
+  color: $mainColor;
+  margin-top: 20px;
+  &.radius-0{
+    border-radius: 0;
+  }
+}
 
 .btn-link {
   padding: 16px 32px;
@@ -360,22 +381,208 @@ $purple: #C70A80;
 .brands-wrap {
   .brand-item {
     text-align: center;
+
     .img {
       height: 100px;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      img{
+
+      img {
         display: flex;
         object-fit: contain;
       }
     }
-    .name{
+
+    .name {
       font-weight: 500;
       font-size: 16px;
       line-height: 20px;
       color: #79018C;
     }
   }
+}
+
+.all-events {
+  .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    &:after {
+      content: "";
+      flex: 1 1;
+      border-bottom: 1px solid #C70A80;
+      margin-left: 10px;
+    }
+
+    .title {
+      color: #C70A80;
+      text-transform: uppercase;
+      font-size: 28px;
+      font-weight: 600;
+    }
+  }
+
+  .event-item {
+    padding: 15px 0;
+
+    .duration {
+      font-size: 18px;
+      color: $mainColor;
+      font-weight: 500;
+    }
+
+    .img {
+      height: 236px;
+      overflow: hidden;
+      border-radius: 4px;
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+      }
+
+      img {
+        display: flex;
+        width: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+      }
+    }
+
+    .time {
+      text-align: center;
+
+      .day {
+        font-weight: 600;
+        font-size: 32px;
+        color: $mainColor;
+      }
+
+      .month {
+        font-size: 14px;
+        font-weight: 600;
+        color: $mainColor;
+      }
+    }
+  }
+}
+
+.event-detail {
+  #list-event {
+    margin-top: 30px;
+
+    .event-item {
+      border: 1px solid #ccc;
+      padding: 15px;
+      .content {
+        margin-top: 24px;
+        display: inline-flex;
+        align-items: center;
+        .name{
+          max-width: 75%;
+          font-size: 18px;
+          font-weight: 500;
+          color: black;
+          line-height: 22px;
+        }
+        .time {
+          width: 100px;
+          text-align: center;
+          color: $mainColor;
+          .day{
+            font-size: 28px;
+            font-weight: 600;
+          }
+          .month{
+            margin-top: 5px;
+            font-weight: 500;
+            font-size: 18px;
+          }
+        }
+      }
+
+      .img {
+        height: 216px;
+        overflow: hidden;
+        display: flex;
+
+        a {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          overflow: hidden;
+
+          img {
+            display: flex;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .event-related {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: $mainColor;
+    width: fit-content;
+    border-bottom: 2px solid $mainColor;
+
+  }
+
+  .event-name {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    color: $mainColor;
+    margin-bottom: 30px;
+  }
+
+  .content {
+    font-size: 16px;
+    color: black;
+    line-height: 19.5px;
+  }
+
+  .duration {
+    background-image: url("/assets/frontend/img/duration.jpeg");
+    padding: 50px 20px;
+    color: white;
+
+    .tag {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 12px;
+      width: fit-content;
+      height: 36px;
+      background: #C70A80;
+      border-radius: 36px;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    ul {
+      margin: 24px 0;
+
+      li {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+  }
+
 }

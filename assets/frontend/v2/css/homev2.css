@@ -10,6 +10,25 @@
 .text-main {
   color: #79018C; }
 
+.btn-outline-primary {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  gap: 8px;
+  width: 280px;
+  height: 56px;
+  background: #FFFFFF;
+  border: 2px solid #79018C;
+  border-radius: 56px;
+  font-size: 18px;
+  color: #79018C;
+  margin-top: 20px; }
+  .btn-outline-primary.radius-0 {
+    border-radius: 0; }
+
 .btn-link {
   padding: 16px 32px;
   gap: 8px;
@@ -267,5 +286,133 @@
     font-size: 16px;
     line-height: 20px;
     color: #79018C; }
+
+.all-events .header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row; }
+  .all-events .header:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid #C70A80;
+    margin-left: 10px; }
+  .all-events .header .title {
+    color: #C70A80;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600; }
+.all-events .event-item {
+  padding: 15px 0; }
+  .all-events .event-item .duration {
+    font-size: 18px;
+    color: #79018C;
+    font-weight: 500; }
+  .all-events .event-item .img {
+    height: 236px;
+    overflow: hidden;
+    border-radius: 4px; }
+    .all-events .event-item .img a {
+      width: 100%;
+      height: 100%;
+      display: flex; }
+    .all-events .event-item .img img {
+      display: flex;
+      width: 100%;
+      object-fit: cover;
+      transition: 0.5s; }
+  .all-events .event-item .time {
+    text-align: center; }
+    .all-events .event-item .time .day {
+      font-weight: 600;
+      font-size: 32px;
+      color: #79018C; }
+    .all-events .event-item .time .month {
+      font-size: 14px;
+      font-weight: 600;
+      color: #79018C; }
+
+.event-detail #list-event {
+  margin-top: 30px; }
+  .event-detail #list-event .event-item {
+    border: 1px solid #ccc;
+    padding: 15px; }
+    .event-detail #list-event .event-item .content {
+      margin-top: 24px;
+      display: inline-flex;
+      align-items: center; }
+      .event-detail #list-event .event-item .content .name {
+        max-width: 75%;
+        font-size: 18px;
+        font-weight: 500;
+        color: black;
+        line-height: 22px; }
+      .event-detail #list-event .event-item .content .time {
+        width: 100px;
+        text-align: center;
+        color: #79018C; }
+        .event-detail #list-event .event-item .content .time .day {
+          font-size: 28px;
+          font-weight: 600; }
+        .event-detail #list-event .event-item .content .time .month {
+          margin-top: 5px;
+          font-weight: 500;
+          font-size: 18px; }
+    .event-detail #list-event .event-item .img {
+      height: 216px;
+      overflow: hidden;
+      display: flex; }
+      .event-detail #list-event .event-item .img a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: hidden; }
+        .event-detail #list-event .event-item .img a img {
+          display: flex;
+          object-fit: cover;
+          width: 100%; }
+.event-detail .event-related {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #79018C;
+  width: fit-content;
+  border-bottom: 2px solid #79018C; }
+.event-detail .event-name {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  color: #79018C;
+  margin-bottom: 30px; }
+.event-detail .content {
+  font-size: 16px;
+  color: black;
+  line-height: 19.5px; }
+.event-detail .duration {
+  background-image: url("/assets/frontend/img/duration.jpeg");
+  padding: 50px 20px;
+  color: white; }
+  .event-detail .duration .tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    width: fit-content;
+    height: 36px;
+    background: #C70A80;
+    border-radius: 36px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: 500; }
+  .event-detail .duration ul {
+    margin: 24px 0; }
+    .event-detail .duration ul li {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px; }
 
 /*# sourceMappingURL=homev2.css.map */

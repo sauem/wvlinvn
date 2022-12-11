@@ -7,35 +7,38 @@
     </section>
     <template id="event-cate">
         <div v-for="group in events">
-            <div class="all-events-header">
-                <span class="all-events-title">SỰ KIỆN THÁNG @{{group.monthYear}}</span>
-                <svg width="949" height="2" viewBox="0 0 949 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect y="0.5" width="949" height="1" fill="#C70A80"/>
-                </svg>
-
-            </div>
-            <div v-if="group.items.length > 0" class="">
-                <div class="table mb-0">
-                    <div class="all-events-wrap">
-                        <div v-for="event in group.items" class="all-events-item">
-                            <div>
-                                <p class="all-events-item-date">@{{event.day}}</p>
-                                <p class="all-events-item-month">Tháng @{{ event.month }}</p>
-                            </div>
-                            <div class="all-events-item-2">
-                                <div class="all-events-item-2-img">
-                                    <img style="width: 100%" :src="event.image" :alt="event.name"/>
+            <div class="py-4">
+                <div class="header d-flex">
+                    <span class="title">SỰ KIỆN THÁNG @{{group.monthYear}}</span>
+                </div>
+                <div v-if="group.items.length > 0" class="row justify-content-center">
+                    <div class="col-md-10">
+                        <div v-for="event in group.items" class="event-item row align-items-center">
+                            <div class="col-2">
+                                <div class="time">
+                                    <p class="day">@{{event.day}}</p>
+                                    <p class="month">Tháng @{{event.month}}</p>
                                 </div>
-                                <div class="all-events-item-wrap-content">
-                                    <p v-if="event.timeTo" class="all-events-item-content">
-                                        Diễn ra vào lúc <span v-if="event.timeTo">@{{event.timeTo}}</span>
-                                        <span v-if="event.timeFrom">- @{{event.timeFrom}}</span>
-                                    </p>
-                                    <p class="all-events-item-desc">
-                                       <a :href="`/events/wlin/${event.key}`">
-                                           @{{event.name}}
-                                       </a>
-                                    </p>
+                            </div>
+                            <div class="col-10">
+                                <div class="row align-items-center">
+                                    <div class="col-md-5">
+                                        <div class="img">
+                                            <a :href="`/events/wlin/${event.key}`">
+                                                <img class="img-fluid" :src="event.image" alt=""/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p v-if="event.timeTo"
+                                           class="duration">
+                                            Diễn ra vào lúc <span v-if="event.timeFrom">@{{  event.timeFrom }}</span> <span
+                                                    v-if="event.timeTo">- @{{ event.timeTo }}</span>
+                                        </p>
+                                        <p class="name">
+                                            <a :href="`/events/wlin/${event.key}`"> @{{event.name}}</a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
