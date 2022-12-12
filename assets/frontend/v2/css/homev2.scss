@@ -16,6 +16,7 @@ $purple: #C70A80;
 .text-main {
   color: $mainColor;
 }
+
 .btn-outline-primary {
 
   box-sizing: border-box;
@@ -33,7 +34,8 @@ $purple: #C70A80;
   font-size: 18px;
   color: $mainColor;
   margin-top: 20px;
-  &.radius-0{
+
+  &.radius-0 {
     border-radius: 0;
   }
 }
@@ -82,15 +84,36 @@ $purple: #C70A80;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
-.theme-header .header-navigation {
-  background-color: $mainColor;
-  .nice-select:after{
+.header-navigation .main-menu ul > li.has-children > a:before{
+  color: white;
+}
+.header-navigation .main-menu ul li > a {
+  color: white;
+
+  &:hover {
     color: white;
   }
-  li, a, p, span{
-    color: white!important;
+}
+.navigation-style-v3 .header-right-nav ul li:not(first-child){
+  margin-left: 0;
+}
+.nice-select.open .list{
+  width: fit-content;
+  li{
+    color: $mainColor!important;
   }
 }
+.lang-dropdown .nice-select{
+  color: white;
+}
+
+.theme-header .header-navigation {
+  background-color: $mainColor;
+  //.nice-select:after{
+  //  color: white;
+  //}
+}
+
 .nav-search {
   form {
     position: relative;
@@ -345,19 +368,23 @@ $purple: #C70A80;
   .blog-item {
     padding: 15px 0;
     border-bottom: 1px solid #ccc;
-    &.blog-big-img{
+
+    &.blog-big-img {
       .img {
         height: 180px;
-        a{
+
+        a {
           height: 100%;
           width: 100%;
           display: flex;
         }
-        img{
+
+        img {
           height: 100%;
         }
       }
     }
+
     &:hover {
       .img img {
         transform: scale(1.1);
@@ -500,26 +527,31 @@ $purple: #C70A80;
     .event-item {
       border: 1px solid #ccc;
       padding: 15px;
+
       .content {
         margin-top: 24px;
         display: inline-flex;
         align-items: center;
-        .name{
+
+        .name {
           max-width: 75%;
           font-size: 18px;
           font-weight: 500;
           color: black;
           line-height: 22px;
         }
+
         .time {
           width: 100px;
           text-align: center;
           color: $mainColor;
-          .day{
+
+          .day {
             font-size: 28px;
             font-weight: 600;
           }
-          .month{
+
+          .month {
             margin-top: 5px;
             font-weight: 500;
             font-size: 18px;
