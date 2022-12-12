@@ -1,5 +1,6 @@
 <?php
 
+use App\BlogCategory;
 use App\CourseCoupon;
 use App\Helpers\LanguageHelper;
 use App\Language;
@@ -2812,10 +2813,18 @@ function getLink($menu = [])
             return '/';
     }
 }
+function _DATE($date){
+    return date('d/m/Y', strtotime($date));
+}
+function _IMG($id)
+{
+    $image = get_attachment_image_by_id($id, 'full');
+    return Arr::get($image, 'img_url');
+}
 
 function linkCategory($category)
 {
-    return "/blog/{$category->slug}";
+    return "/$category->type/{$category->slug}";
 }
 
 function blogLink($blog)

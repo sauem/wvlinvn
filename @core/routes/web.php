@@ -412,8 +412,8 @@ Route::group(['middleware' => ['setlang:frontend', 'globalVariable', 'maintains_
     Route::get($blog_page_slug . '-category/{id}/{any}', 'FrontendController@category_wise_blog_page')->name('frontend.blog.category');
     Route::get($blog_page_slug . '-tags/{name}', 'FrontendController@tags_wise_blog_page')->name('frontend.blog.tags.page');
 
-    Route::get('wlin-network', 'WlinNetworkController@index')->name('wlin.list');
-    Route::get('wlin-network/{slug}', 'WlinNetworkController@category')->name('wlin.list.post');
+    Route::get('wlin-network', 'Frontend\WlinNetworkController@index')->name('wlin.list');
+    Route::get('network/{slug}', 'Frontend\WlinNetworkController@category')->name('wlin.list.blog');
     /*------------------------------------
         FRONTEND: ROUTES
     ------------------------------------*/

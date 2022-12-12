@@ -116,6 +116,8 @@
                                                            data-id="{{$data->id}}"
                                                            data-name="{{$data->name}}"
                                                            data-lang="{{$data->lang}}"
+                                                           data-parent="{{$data->parent}}"
+                                                           data-type="{{$data->type}}"
                                                            data-status="{{$data->status}}"
                                                            data-imageid="{{$data->image}}"
                                                            data-image="{{$img_url}}"
@@ -186,7 +188,7 @@
                             <div class="form-group">
                                 <label for="edit_status">{{__('Parent')}}</label>
 
-                                <select name="type" class="form-control" id="edit_status">
+                                <select name="parent" class="form-control" id="edit_status">
                                     <option value="0">Danh mục gốc</option>
 
                                 @if(!empty(Arr::get($all_category, get_user_lang())))
@@ -249,7 +251,7 @@
                         </div>
                         <div class="form-group">
                             <label for="edit_status">{{__('Type')}}</label>
-                            <select name="type" class="form-control" id="edit_status">
+                            <select name="type" class="form-control" id="type">
                                 <option value="blog">{{__("Blog")}}</option>
                                 <option value="member">{{__("Member")}}</option>
                                 <option value="network">{{__("Wlin Networks")}}</option>
@@ -258,7 +260,7 @@
                         <div class="form-group">
                             <label for="edit_status">{{__('Parent')}}</label>
 
-                            <select name="type" class="form-control" id="edit_status">
+                            <select name="parent" class="form-control" id="parent">
                                 <option value="0">Danh mục gốc</option>
 
                                 @if(!empty(Arr::get($all_category, get_user_lang())))
@@ -334,6 +336,8 @@
                 modal.find('#category_id').val(id);
                 modal.find('#edit_status option[value="' + status + '"]').attr('selected', true);
                 modal.find('#edit_name').val(name);
+                modal.find('#type').val(el.data('type'));
+                modal.find('#parent').val(el.data('parent'));
                 modal.find('#edit_language option[value="' + el.data('lang') + '"]').attr('selected', true);
 
                 if (imageid != '') {

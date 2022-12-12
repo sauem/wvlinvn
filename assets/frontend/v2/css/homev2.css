@@ -251,6 +251,14 @@
 .list-blog .blog-item {
   padding: 15px 0;
   border-bottom: 1px solid #ccc; }
+  .list-blog .blog-item.blog-big-img .img {
+    height: 180px; }
+    .list-blog .blog-item.blog-big-img .img a {
+      height: 100%;
+      width: 100%;
+      display: flex; }
+    .list-blog .blog-item.blog-big-img .img img {
+      height: 100%; }
   .list-blog .blog-item:hover .img img {
     transform: scale(1.1); }
   .list-blog .blog-item:hover .name {
