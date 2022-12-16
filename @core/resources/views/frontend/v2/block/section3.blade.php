@@ -10,15 +10,12 @@
             </div>
             <div class="row no-gutters row-cols-md-5">
                 @foreach($categories as $key => $category)
-                    @php
-                        $urlImg = get_attachment_image_by_id($category->image, 'full');
-                    @endphp
                     <div class="col-md col-6">
                         <div class="category-item">
                             <div class="img">
                                 <a href="{{linkCategory($category)}}">
 
-                                    <img class="world-item-img" src="{{Arr::get($urlImg, 'img_url')}}" alt=""/>
+                                    <img class="world-item-img" src="{{_IMG($category->image)}}" alt=""/>
                                 </a>
                             </div>
                             <p class="text">

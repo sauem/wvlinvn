@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/assets/frontend/v2/css/default.css">
     <link rel="stylesheet" href="/assets/frontend/v2/css/style.css">
     <link rel="stylesheet" href="/assets/frontend/v2/css/responsive.css">
+    <link rel="stylesheet" href="/assets/frontend/v2/css/app.css?v={{time()}}">
     <link rel="stylesheet" href="/assets/frontend/v2/css/homev2.css?v={{time()}}">
     <link href="/assets/frontend/v2/lib/owl/assets/owl.carousel.min.css" rel="stylesheet">
 </head>

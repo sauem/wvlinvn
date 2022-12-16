@@ -991,7 +991,7 @@ ITEM;
         $all_team_members = TeamMember::where('lang', $lang)->orderBy('id', 'desc')->take(get_static_option('about_page_team_member_item'))->get();
         $all_testimonial = Testimonial::where('lang', $lang)->orderBy('id', 'desc')->take(get_static_option('about_page_testimonial_item'))->get();
         $all_key_features = KeyFeatures::where('lang', $lang)->get();
-        return view('frontend.pages.about')->with([
+        return view('frontend.v2.about.index')->with([
             'all_brand_logo' => $all_brand_logo,
             'all_team_members' => $all_team_members,
             'all_testimonial' => $all_testimonial,

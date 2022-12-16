@@ -2813,11 +2813,17 @@ function getLink($menu = [])
             return '/';
     }
 }
-function _DATE($date){
+
+function _DATE($date)
+{
     return date('d/m/Y', strtotime($date));
 }
+
 function _IMG($id)
 {
+    if (!$id) {
+        return '/assets/backend/images/placeholder.svg';
+    }
     $image = get_attachment_image_by_id($id, 'full');
     return Arr::get($image, 'img_url');
 }

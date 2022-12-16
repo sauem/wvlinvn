@@ -52,6 +52,7 @@
     "autoload": {
         "files": [
             "app/Helpers/helpers.php",
+            "app/Helpers/Lib.php",
             "app/Helpers/widgets.php"
         ],
         "psr-4": {
