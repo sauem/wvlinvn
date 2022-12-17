@@ -32,7 +32,7 @@
     <div class="col-md-4">
         <div class="form-group">
             <label>Value Title</label>
-            <input class="form-control" value="{{option('about_value_content', $lang)}}"
+            <input class="form-control" value="{{option('about_value_title', $lang)}}"
                    name="about_value_title_{{$lang}}">
             <label>Value Content</label>
             <textarea class="form-control" name="about_value_content_{{$lang}}">
