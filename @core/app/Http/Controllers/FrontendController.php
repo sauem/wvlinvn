@@ -147,10 +147,7 @@ class FrontendController extends Controller
             'all_service_category' => $all_service_category,
             'all_contact_info' => $all_contact_info,
         ];
-        if ($_SERVER['REMOTE_ADDR'] === '222.252.23.157') {
-            dd($static_field_data);
 
-        }
         if (in_array($home_page_variant, ['10', '12', '16'])) {
             //appointment module for home page 10,12,16
             $appointment_query = Appointment::query();
@@ -991,11 +988,14 @@ ITEM;
         $all_team_members = TeamMember::where('lang', $lang)->orderBy('id', 'desc')->take(get_static_option('about_page_team_member_item'))->get();
         $all_testimonial = Testimonial::where('lang', $lang)->orderBy('id', 'desc')->take(get_static_option('about_page_testimonial_item'))->get();
         $all_key_features = KeyFeatures::where('lang', $lang)->get();
+        $blog_categories = BlogCategory::query()->where(['lang' => $lang, 'status' => 'publish', 'type' => 'blog'])
+            ->orderBy('id', 'desc')->take(10)->get();
         return view('frontend.v2.about.index')->with([
             'all_brand_logo' => $all_brand_logo,
             'all_team_members' => $all_team_members,
             'all_testimonial' => $all_testimonial,
             'all_key_features' => $all_key_features,
+            'blog_categories' => $blog_categories
         ]);
     }
 

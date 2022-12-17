@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="section-title mb-5 text-center text-white">WLIN WORLD</h2>
+                        <h2 class="section-title mb-5 text-center text-white">{{$title ?? 'WLIN WORLD'}}</h2>
                     </div>
                 </div>
             </div>
