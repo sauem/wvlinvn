@@ -717,12 +717,7 @@ function render_embed_google_map($address, $zoom = 10)
     if (empty($address)) {
         return;
     }
-    printf(
-        '<div class="elementor-custom-embed"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=%s&amp;t=m&amp;z=%d&amp;output=embed&amp;iwloc=near" aria-label="%s"></iframe></div>',
-        rawurlencode($address),
-        $zoom,
-        $address
-    );
+   echo '<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q='.$address.'&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"></iframe>';
 }
 
 function render_drag_drop_form_builder_markup($content = '')
@@ -2835,7 +2830,8 @@ function linkCategory($category)
 
 function blogLink($blog)
 {
-    return "/blog/{$blog->slug}";
+    $category = $blog->parent ? $blog->parent->slug : '';
+    return "/blog/$category/{$blog->slug}";
 }
 
 function getMemberLink($member)

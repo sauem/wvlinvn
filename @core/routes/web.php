@@ -407,6 +407,8 @@ Route::group(['middleware' => ['setlang:frontend', 'globalVariable', 'maintains_
         FRONTEND: BLOGS ROUTES
     ---------------------------------------*/
     Route::get($blog_page_slug, 'FrontendController@blog_page')->name('frontend.blog');
+    Route::get('/blog/{category}', 'FrontendController@blog_category')->name('frontend.blog.cate');
+    Route::get('/blog/{category}/{slug}', 'FrontendController@blog_single_page')->name('frontend.blog.single');
     Route::get($blog_page_slug . '/{slug}', 'FrontendController@blog_single_page')->name('frontend.blog.single');
     Route::get($blog_page_slug . '-search', 'FrontendController@blog_search_page')->name('frontend.blog.search');
     Route::get($blog_page_slug . '-category/{id}/{any}', 'FrontendController@category_wise_blog_page')->name('frontend.blog.category');

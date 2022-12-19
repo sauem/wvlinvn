@@ -756,8 +756,26 @@ ITEM;
         $default_lang = Language::where('default', 1)->first();
         $lang = !empty(session()->get('lang')) ? session()->get('lang') : $default_lang->slug;
         $all_blogs = Blog::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->paginate(get_static_option('blog_page_item'));
+        $categoríes = BlogCategory::query()->where(['type' => 'blog'])->get();
+        $all_header_slider = HeaderSlider::where('lang', $lang)->get();
+
         return view('frontend.v2.blog.index')->with([
-            'all_blogs' => $all_blogs
+            'all_blogs' => $all_blogs,
+            'categories' => $categoríes,
+            'sliders' => $all_header_slider
+        ]);
+    }
+
+    public function blog_category($category)
+    {
+        $categories = BlogCategory::where(['lang' => get_user_lang(), 'status' => 'publish', 'slug' => $category])
+            ->orderBy('id', 'desc')->paginate(get_static_option('blog_page_item'));
+
+        $all_header_slider = HeaderSlider::where('lang', get_user_lang())->get();
+
+        return view('frontend.v2.blog.category-news')->with([
+            'categories' => $categories,
+            'sliders' => $all_header_slider
         ]);
     }
 
@@ -816,11 +834,12 @@ ITEM;
         ]);
     }
 
-    public function blog_single_page($slug)
+    public function blog_single_page($category, $slug)
     {
         $default_lang = Language::where('default', 1)->first();
         $lang = !empty(session()->get('lang')) ? session()->get('lang') : $default_lang->slug;
         $blog_post = Blog::where('slug', $slug)->first();
+
         if (empty($blog_post)) {
             abort(404);
         }
@@ -1048,9 +1067,9 @@ ITEM;
     {
         $default_lang = Language::where('default', 1)->first();
         $lang = !empty(session()->get('lang')) ? session()->get('lang') : $default_lang->slug;
-        $all_contact_info = ContactInfoItem::where('lang', $lang)->get();
-        return view('frontend.pages.contact-page')->with([
-            'all_contact_info' => $all_contact_info
+        $infos = ContactInfoItem::where('lang', $lang)->get();
+        return view('frontend.v2.contact.index')->with([
+            'infos' => $infos
         ]);
     }
 
