@@ -14,10 +14,10 @@
             @endif
         </div>
         <input type="hidden" name="{{$name.$lang ?? "image_page_{$lang}"}}"
-               value="{{option($name, $lang)}}">
+               value="{{option($name.$lang, $lang)}}">
         <button type="button" class="btn btn-info media_upload_form_btn" data-btntitle="{{__('Select Image')}}"
                 data-modaltitle="{{__('Upload Image')}}"
-                data-imgid="{{option($name,$lang)}}" data-toggle="modal"
+                data-imgid="{{option($name.$lang,$lang)}}" data-toggle="modal"
                 data-target="#media_upload_modal">
             {{__('Chose Image')}}
         </button>
