@@ -333,6 +333,7 @@ function get_user_lang_direction()
     return \App\Helpers\LanguageHelper::user_lang_dir();
 }
 
+
 function get_field_by_type($type, $name, $placeholder, $options = [], $requried = null, $mimes = null)
 {
     $markup = '';

@@ -29,10 +29,10 @@ class LanguageHelper
     public static function user_lang()
     {
         if (self::$user_lang === null) {
-            $session_lang = session()->get('lang');
-            if ( !empty($session_lang) && $session_lang !== self::default_slug()){
-                self::$user_lang = self::lang_instance()->where('slug',session()->get('lang'))->first();
-            }else{
+            $session_lang = userLang() ?? session()->get('lang');
+            if (!empty($session_lang) && $session_lang !== self::default_slug()) {
+                self::$user_lang = self::lang_instance()->where('slug', $session_lang)->first();
+            } else {
                 self::$user_lang = self::default();
             }
 
@@ -57,6 +57,7 @@ class LanguageHelper
         }
         return self::$default_slug;
     }
+
     public static function default_dir()
     {
         if (self::$default === null) {
@@ -65,13 +66,17 @@ class LanguageHelper
         }
         return self::$default->direction;
     }
-    public static function user_lang_slug(){
+
+    public static function user_lang_slug()
+    {
         if (self::$user_lang_slug === null) {
+
             $default = self::lang_instance()->where('default', '1')->first();
-            self::$user_lang_slug = session()->get('lang') ?? $default->slug;
+            self::$user_lang_slug = userLang() ?? $default->slug;
         }
         return self::$user_lang_slug;
     }
+
     public static function user_lang_dir()
     {
         return self::user_lang()->direction;

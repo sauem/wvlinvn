@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="section-title mb-5 text-center text-main">HỘI VIÊN WLIN</h2>
+                        <h2 class="section-title mb-5 text-center text-main">{{__('WLIN MEMBERS')}}</h2>
                     </div>
 
                     <div class="col-12">
