@@ -35,7 +35,7 @@
 
                                     @if(isset($menu['children']) && !empty($menu['children']))
                                         <li class="menu-item has-children">
-                                            <a href="#" class="nav-link">
+                                            <a href="{{getLink($menu)}}" class="nav-link">
                                                 {{Arr::get($menu, 'pname')}}
                                             </a>
                                             <ul class="sub-menu">
@@ -43,7 +43,7 @@
 
                                                     @if(isset($children['children']) && !empty($children['children']))
                                                         <li class="has-children">
-                                                            <a href="#">{{Arr::get($children, 'pname')}}</a>
+                                                            <a href="{{getLink($menu)}}">{{Arr::get($children, 'pname')}}</a>
                                                             <ul class="sub-menu">
                                                                 @foreach($children['children'] as $child)
                                                                     <li>
