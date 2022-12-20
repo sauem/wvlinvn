@@ -1065,6 +1065,7 @@ ITEM;
 
     public function contact_page()
     {
+
         $default_lang = Language::where('default', 1)->first();
         $lang = !empty(session()->get('lang')) ? session()->get('lang') : $default_lang->slug;
         $infos = ContactInfoItem::where('lang', $lang)->get();

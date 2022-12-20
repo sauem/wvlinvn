@@ -77,9 +77,12 @@
                 </div>
                 <div class="header-right-nav d-flex align-items-center">
                     <div class="lang-dropdown">
-                        <select class="wide">
-                            <option value="01">EN</option>
-                            <option value="02">VI</option>
+                        <select onchange="switchLang(this)" class="wide">
+                            @if(!empty($all_language))
+                                @foreach($all_language as $lang)
+                                    <option {{userLang() === $lang->slug ? 'selected' : ''}} value="{{$lang->slug}}">{{$lang->symbol ?? $lang->slug}}</option>
+                                @endforeach
+                            @endif
                         </select>
                     </div>
                     <div class="nav-search d-none d-md-block ml-3">
@@ -106,3 +109,22 @@
         </div>
     </div>
 </header>
+@push('script')
+    <script>
+        async function switchLang(element) {
+            try {
+                await $.ajax({
+                    url: '{{route('system.switchLang')}}',
+                    method: 'POST',
+                    data: {
+                        _token: '{{csrf_token()}}',
+                        lang: $(element).val()
+                    },
+                });
+                window.location.reload();
+            } catch (e) {
+                alert(e.message);
+            }
+        }
+    </script>
+@endpush

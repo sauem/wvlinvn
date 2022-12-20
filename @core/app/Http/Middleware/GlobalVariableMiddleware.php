@@ -28,7 +28,8 @@ class GlobalVariableMiddleware
         $all_important_links = Menu::find(get_static_option('important_link_'.get_user_lang().'_widget_menu_id'));
         $all_recent_post = Blog::where('lang' ,$lang)->orderBy('id', 'DESC')->take(get_static_option('recent_post_widget_item'))->get();
         $all_language = LanguageHelper::all_languages();
-        $primary_menu = Menu::where(['status' => 'default' ,'lang' => $lang])->first();
+        $primary_menu = Menu::where(['status' => 'default' ,'lang' => userLang()])->first();
+
         $footer_widgets = Widgets::orderBy('widget_order','ASC')->get();
 
         $popup_id = get_static_option('popup_selected_'.$lang.'_id');

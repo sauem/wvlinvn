@@ -240,6 +240,10 @@
                             <label for="slug">{{__('Slug')}}</label>
                             <input type="text" class="form-control" readonly name="slug">
                         </div>
+                        <div class="form-group">
+                            <label for="edit_slug">{{__('Symbol')}}</label>
+                            <input type="text" class="form-control" name="symbol" id="symbol">
+                        </div>
                         <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">{{__('Add New')}}</button>
                     </form>
                 </div>
@@ -409,6 +413,10 @@
                     <div class="form-group">
                         <label for="edit_slug">{{__('Slug')}}</label>
                         <input type="text" class="form-control" id="edit_slug" name="slug" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_slug">{{__('Symbol')}}</label>
+                        <input type="text" class="form-control" name="symbol" id="symbol" >
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -584,6 +592,10 @@
                         <label for="edit_slug">{{__('Slug')}}</label>
                         <input type="text" class="form-control" name="slug" readonly>
                     </div>
+                    <div class="form-group">
+                        <label for="edit_slug">{{__('Symbol')}}</label>
+                        <input type="text" class="form-control" name="symbol" id="symbol">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
@@ -611,11 +623,13 @@
             var id = el.data('id');
             var name = el.data('name');
             var slug = el.data('slug');
+            var symbol = el.data('symbol');
             var form = $('#language_item_edit_modal');
             form.find('#lang_id').val(id);
             form.find('input[name="name"]').val(name);
             form.find('select[name="language_select"] option[value="'+slug+'"]').attr('selected',true);
             form.find('#edit_slug').val(slug);
+            form.find('#symbol').val(symbol);
             form.find('#edit_direction option[value="' + el.data('direction') + '"]').prop('selected', true);
             form.find('#edit_status option[value="' + el.data('status') + '"]').prop('selected', true);
         });

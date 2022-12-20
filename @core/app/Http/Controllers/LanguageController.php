@@ -67,6 +67,7 @@ class LanguageController extends Controller
             'direction' => $request->direction,
             'slug' => $request->slug,
             'status' => $request->status,
+            'symbol' => $request->symbol,
             'default' => 0
         ]);
         //generate admin panel string
@@ -149,7 +150,8 @@ class LanguageController extends Controller
             'name' => $request->name,
             'direction' => $request->direction,
             'status' => $request->status,
-            'slug' => $request->slug
+            'slug' => $request->slug,
+            'symbol' => $request->symbol
         ]);
 
         if ($old_lang != $request->slug){
@@ -432,7 +434,7 @@ class LanguageController extends Controller
             'type' => 'success'
         ]);
     }
-    
+
      public function add_new_string(Request $request)
     {
         $this->validate($request, [

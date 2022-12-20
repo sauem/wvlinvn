@@ -315,6 +315,14 @@ function get_all_language()
     return \App\Helpers\LanguageHelper::all_languages();
 }
 
+function userLang()
+{
+    if (Cache::has('lang') && !empty(Cache::get('lang'))) {
+        return Cache::get('lang');
+    }
+    return get_user_lang();
+}
+
 function get_user_lang()
 {
     return \App\Helpers\LanguageHelper::user_lang_slug();
@@ -717,7 +725,7 @@ function render_embed_google_map($address, $zoom = 10)
     if (empty($address)) {
         return;
     }
-   echo '<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q='.$address.'&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"></iframe>';
+    echo '<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=' . $address . '&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"></iframe>';
 }
 
 function render_drag_drop_form_builder_markup($content = '')
@@ -2845,8 +2853,8 @@ function bootstrapMenu($menuId)
     if (empty($menuId)) {
         return $output;
     }
-    $lang = LanguageHelper::user_lang();
-    $menu = Menu::query()->where(['id' => $menuId, 'lang' => $lang->slug])->first();
+    $lang = userLang();
+    $menu = Menu::query()->where(['id' => $menuId, 'lang' => $lang])->first();
     if (is_null($menu)) {
         return $output;
     }
