@@ -72,7 +72,7 @@ class LanguageHelper
         if (self::$user_lang_slug === null) {
 
             $default = self::lang_instance()->where('default', '1')->first();
-            self::$user_lang_slug = session()->get('lang') ?? $default->slug;
+            self::$user_lang_slug = userLang() ?? $default->slug;
         }
         return self::$user_lang_slug;
     }

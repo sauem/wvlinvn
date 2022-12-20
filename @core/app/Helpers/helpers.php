@@ -317,9 +317,9 @@ function get_all_language()
 
 function userLang()
 {
-//    if (Cache::has('lang') && !empty(Cache::get('lang'))) {
-//        return Cache::get('lang');
-//    }
+    if (Cache::has('lang') && !empty(Cache::get('lang'))) {
+        return Cache::get('lang');
+    }
     return get_user_lang();
 }
 
