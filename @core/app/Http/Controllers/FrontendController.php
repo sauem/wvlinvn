@@ -99,6 +99,7 @@ class FrontendController extends Controller
         $all_brand_logo = Brand::all();
         $all_work = Works::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(get_static_option('home_page_01_case_study_items'))->get();
         $all_blog = Blog::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(4)->get();
+        $breakingNews = Blog::where(['lang' => $lang, 'status' => 'publish','breaking_news' => 1])->orderBy('id', 'desc')->take(4)->get();
         $blog_categories = BlogCategory::query()->where(['lang' => $lang, 'status' => 'publish', 'type' => 'blog'])
             ->orderBy('id', 'desc')->take(10)->get();
         $all_contact_info = ContactInfoItem::where(['lang' => $lang])->orderBy('id', 'desc')->get();
@@ -129,6 +130,7 @@ class FrontendController extends Controller
             ->get();
 
         $blade_data = [
+            'breakingNews' => $breakingNews,
             'static_field_data' => $static_field_data,
             'all_header_slider' => $all_header_slider,
             'all_counterup' => $all_counterup,

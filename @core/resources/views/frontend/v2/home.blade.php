@@ -6,6 +6,7 @@
     @include('frontend.v2.block.section3', ['categories' => $blog_categories, 'lang' => $user_select_lang_slug])
     @include('frontend.v2.block.section4', ['members' => $members, 'lang' => $user_select_lang_slug])
     @include('frontend.v2.block.section5', ['blogs' => $all_blog, 'lang' => $user_select_lang_slug])
+    @include('frontend.v2.block.section7', ['breakingNews' => $breakingNews ?? [], 'lang' => $user_select_lang_slug])
     @include('frontend.v2.block.section6', ['brands' => $all_brand_logo, 'lang' => $user_select_lang_slug])
 @stop
 @push('vue')
