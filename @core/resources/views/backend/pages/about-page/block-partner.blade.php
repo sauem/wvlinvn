@@ -10,9 +10,11 @@
     <div class="col-md-8">
         <div class="form-group">
             <label>Title</label>
-            <input class="form-control" name="about_partner_title_{{$lang}}">
+            <input value="{{option('about_partner_title',$lang)}}" class="form-control"
+                   name="about_partner_title_{{$lang}}">
             <label>Content</label>
-            <input class="form-control" name="about_partner_content_{{$lang}}">
+            <input value="{{option('about_partner_content',$lang)}}" class="form-control"
+                   name="about_partner_content_{{$lang}}">
 
         </div>
     </div>
@@ -31,9 +33,12 @@
     <div class="col-md-8">
         <div class="form-group">
             <label>Title left</label>
-            <input class="form-control" name="about_criteria_right_title_{{$lang}}"/>
+            <input value="{{option('about_criteria_right_content',$lang)}}" class="form-control"
+                   name="about_criteria_right_title_{{$lang}}"/>
             <label>Content</label>
             <textarea class="form-control" name="about_criteria_right_content_{{$lang}}">
+                                {{option('about_criteria_right_content',$lang)}}
+
             </textarea>
         </div>
     </div>
@@ -46,9 +51,11 @@
     <div class="col-md-8">
         <div class="form-group">
             <label>Title right</label>
-            <input class="form-control" name="about_criteria_left_title_{{$lang}}"/>
+            <input value="{{option('about_criteria_left_title',$lang)}}" class="form-control"
+                   name="about_criteria_left_title_{{$lang}}"/>
             <label>Content</label>
             <textarea class="form-control" name="about_criteria_left_content_{{$lang}}">
+                {{option('about_criteria_left_content',$lang)}}
             </textarea>
         </div>
     </div>
@@ -63,7 +70,8 @@
     <div class="col-md-6">
         <div class="form-group">
             <label>Title</label>
-            <input class="form-control" name="about_structure_title"/>
+            <input value="{{option('about_structure_title',$lang)}}" class="form-control"
+                   name="about_structure_title_{{$lang}}"/>
             @include('backend.partials.upload-button',[
                          'default'=> option('about_structure_img',$lang),
                          'label' => 'Image','name' => 'about_structure_img_','lang' => $lang
@@ -73,7 +81,7 @@
     <div class="col-md-6">
         <div class="form-group">
             <label>Title</label>
-            <input class="form-control" name="about_role_title"/>
+            <input value="{{option('about_role_title',$lang)}}" class="form-control" name="about_role_title_{{$lang}}"/>
             @include('backend.partials.upload-button',[
                          'default'=> option('about_role_img',$lang),
                          'label' => 'Image','name' => 'about_role_img_','lang' => $lang
