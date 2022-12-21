@@ -24,19 +24,16 @@
             <div class="col-md-5">
                 @foreach($infos as $data)
                     <div class="col-md-6 col-lg-3">
-                        <div class="single-contact-item">
-                            <div class="icon style-0">
-                                <i class="{{$data->icon}}"></i>
-                            </div>
-                            <div class="content">
-                                <span class="title">{{$data->title}}</span>
-                                @php
-                                    $info_details = !empty($data->description) ? explode("\n",$data->description) : [];
-                                @endphp
-                                @foreach($info_details as $item)
-                                    <p class="details">{{$item}}</p>
+                        <div class="d-flex">
+                            <p class="d-flex align-items-center mr-2"><i class="mr-2 {{$data->icon}}"></i> {{$data->title}}: </p>
+                            <p>
+                            @php
+                                $info_details = !empty($data->description) ? explode("\n",$data->description) : [];
+                            @endphp
+                            @foreach($info_details as $item)
+                                <p class="details">{{$item}}</p>
                                 @endforeach
-                            </div>
+                                </p>
                         </div>
                     </div>
                 @endforeach
