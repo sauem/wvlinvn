@@ -4,12 +4,8 @@ img {
 
 ul {
   padding: 0;
-  list-style: none !important;
-  margin: 0 !important;
-}
-
-p {
-  margin: 0 !important;
+  list-style: none;
+  margin: 0;
 }
 
 a:hover {
