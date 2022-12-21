@@ -1,12 +1,11 @@
 @extends('frontend.v2.layout')
 @section("content")
+    @include('frontend.v2.inc.path',['items' => [['title' => $blog_post->category->name, 'link' => linkCategory($blog_post->category)],['title' => $blog_post->title]]])
+
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                @include('frontend.v2.inc.path',['items' => [['title' => $blog_post->category->name, 'link' => linkCategory($blog_post->category)],['title' => $blog_post->title]]])
-            </div>
             <div class="col-md-8">
-                <h2>{{$blog_post->title}}</h2>
+                <h1 class="single-title text-main">{{$blog_post->title}}</h1>
                 <div class="content mt-3">
                     {!! $blog_post->content !!}
                 </div>

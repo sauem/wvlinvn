@@ -10,6 +10,10 @@
 .text-main {
   color: #79018C; }
 
+.single-title {
+  font-size: 32px;
+  line-height: 42px; }
+
 .btn-outline-primary {
   box-sizing: border-box;
   display: flex;
@@ -446,10 +450,11 @@
       line-height: 22px; }
 
 @media (max-width: 576px) {
-  .header-navigation {
+  .header-navigation.breakpoint-on {
     padding: 0; }
-    .header-navigation .header-right-nav .lang-dropdown {
-      margin-left: 20px; }
+
+  .header-navigation .header-right-nav .lang-dropdown {
+    margin-left: 20px; }
 
   .section-title {
     font-size: 24px; }

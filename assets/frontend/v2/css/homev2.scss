@@ -16,6 +16,10 @@ $purple: #C70A80;
 .text-main {
   color: $mainColor;
 }
+.single-title{
+  font-size: 32px;
+  line-height:42px;
+}
 
 .btn-outline-primary {
 
@@ -647,8 +651,10 @@ $purple: #C70A80;
 }
 
 @media (max-width: 576px) {
-  .header-navigation {
+  .header-navigation.breakpoint-on {
     padding: 0;
+  }
+  .header-navigation {
 
     .header-right-nav {
       .lang-dropdown {

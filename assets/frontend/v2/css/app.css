@@ -1010,8 +1010,8 @@ footer .footer-address-place p {
 }
 
 .breadcrumb .li::before {
-  color: #565656;
-  content: ">";
+  /*color: #565656;*/
+  /*content: ">";*/
 }
 
 .text_1,
