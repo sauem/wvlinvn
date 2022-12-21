@@ -445,4 +445,16 @@
       font-size: 18px;
       line-height: 22px; }
 
+@media (max-width: 576px) {
+  .header-navigation .header-right-nav .lang-dropdown {
+    margin-left: 20px; }
+
+  .section-title {
+    font-size: 24px; }
+
+  .videos-wrap, .members-wrap {
+    padding: 0; }
+    .videos-wrap .videos-carousel .video-item, .members-wrap .videos-carousel .video-item {
+      padding: 0; } }
+
 /*# sourceMappingURL=homev2.css.map */

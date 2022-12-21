@@ -1,6 +1,6 @@
 @isset($about)
     <section class="py-5">
-        <div class="bg-light-purple py-md-5 p-4">
+        <div class="bg-light-purple py-md-5 py-4 p-md-4">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-5 col-12">

@@ -639,3 +639,22 @@ $purple: #C70A80;
   }
 
 }
+@media (max-width: 576px) {
+  .header-navigation .header-right-nav{
+    .lang-dropdown{
+      margin-left: 20px;
+    }
+  }
+  .section-title{
+    font-size: 24px;
+  }
+  .videos-wrap, .members-wrap{
+    padding: 0;
+    .videos-carousel{
+      .video-item{
+        padding: 0;
+      }
+    }
+
+  }
+}

@@ -1,6 +1,6 @@
 @isset($videos)
     <section class="py-4">
-        <div class="bg-white p-4">
+        <div class="bg-white p-md-4 p-3">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

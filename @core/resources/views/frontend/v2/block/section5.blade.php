@@ -13,7 +13,7 @@
                 <a class="btn btn-link mt-4 mx-auto" href="/events">Xem tất cả</a>
             </div>
             <div class="col-md-5">
-                <h5 class="text-main text-center line-bottom">TIN TỨC MỚI NHẤT</h5>
+                <h5 class="text-main text-center line-bottom mt-5 mt-md-0">TIN TỨC MỚI NHẤT</h5>
                 @if(!empty($blogs))
                     <div class="list-blog">
                         @foreach($blogs as $blog)
