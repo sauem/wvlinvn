@@ -7,13 +7,13 @@
                         <path d="M17.2401 10.784L14.0001 0.11734L10.7601 10.784H0.666748L8.90675 16.664L5.77341 26.784L14.0001 20.5307L22.2401 26.784L19.1067 16.664L27.3334 10.784H17.2401Z"
                               fill="#FFC122"/>
                     </svg>
-                    <h4 class="text-white ml-2">LỊCH SỰ KIỆN SẮP TỚI</h4>
+                    <h4 class="text-white text-uppercase ml-2">{{__('Upcoming events calendar')}}</h4>
                 </div>
                 <div id="list-event" class="list-event"></div>
-                <a class="btn btn-link mt-4 mx-auto" href="/events">Xem tất cả</a>
+                <a class="btn btn-link mt-4 mx-auto" href="/events">{{__('View all')}}</a>
             </div>
             <div class="col-md-5">
-                <h5 class="text-main text-center line-bottom mt-5 mt-md-0 mb-md-0 mb-md-3">TIN TỨC MỚI NHẤT</h5>
+                <h5 class="text-main text-center line-bottom mt-5 mt-md-0 mb-md-0 mb-md-3">{{__('News')}}</h5>
                 @if(!empty($blogs))
                     <div class="list-blog">
                         @foreach($blogs as $blog)

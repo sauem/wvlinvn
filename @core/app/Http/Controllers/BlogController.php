@@ -78,6 +78,7 @@ class BlogController extends Controller
             'image' => $request->image,
             'user_id' => Auth::user()->id,
             'author' => $request->author,
+            'type' => $request->type,
             'video_url' => $request->video_url,
             'breaking_news' => !empty($request->breaking_news) ? 1 : 0,
         ]);
@@ -102,6 +103,7 @@ class BlogController extends Controller
             'excerpt' => $blog_details->excerpt,
             'lang' => $blog_details->lang,
             'image' => $blog_details->image,
+            'type' => $blog_details->type,
             'video_url' => $blog_details->video_url,
             'user_id' => null,
             'author' => $blog_details->author,
@@ -159,6 +161,7 @@ class BlogController extends Controller
             'image' => $request->image,
             'user_id' => Auth::user()->id,
             'author' => $request->author,
+            'type' => $request->type,
             'breaking_news' => !empty($request->breaking_news) ? 1 : 0,
         ]);
 

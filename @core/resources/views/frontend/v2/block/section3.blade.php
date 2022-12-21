@@ -14,7 +14,6 @@
                         <div class="category-item">
                             <div class="img">
                                 <a href="{{linkCategory($category)}}">
-
                                     <img class="world-item-img" src="{{_IMG($category->image)}}" alt=""/>
                                 </a>
                             </div>

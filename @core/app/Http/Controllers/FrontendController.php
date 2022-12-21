@@ -99,7 +99,7 @@ class FrontendController extends Controller
         $all_brand_logo = Brand::all();
         $all_work = Works::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(get_static_option('home_page_01_case_study_items'))->get();
         $all_blog = Blog::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->take(4)->get();
-        $breakingNews = Blog::where(['lang' => $lang, 'status' => 'publish','breaking_news' => 1])->orderBy('id', 'desc')->take(4)->get();
+        $breakingNews = Blog::where(['lang' => $lang, 'status' => 'publish', 'breaking_news' => 1])->orderBy('id', 'desc')->take(4)->get();
         $blog_categories = BlogCategory::query()->where(['lang' => $lang, 'status' => 'publish', 'type' => 'blog'])
             ->orderBy('id', 'desc')->take(10)->get();
         $all_contact_info = ContactInfoItem::where(['lang' => $lang])->orderBy('id', 'desc')->get();
@@ -777,7 +777,7 @@ ITEM;
 
         return view('frontend.v2.blog.category-news')->with([
             'categories' => $categories,
-            'sliders' => $all_header_slider
+            'sliders' => $all_header_slider,
         ]);
     }
 
@@ -1122,7 +1122,8 @@ ITEM;
         $all_works = Works::where(['lang' => $lang, 'status' => 'publish'])->where('categories_id', 'LIKE', '%' . $id . '%')->paginate(12);
         $category_name = $category->name;
 
-        return view('frontend.pages.work.work-category')->with(['all_work' => $all_works, 'category_name' => $category_name]);
+        return view('frontend.pages.work.work-category')->with([
+            'all_work' => $all_works, 'category_name' => $category_name]);
 
     }
 

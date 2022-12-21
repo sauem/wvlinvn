@@ -98,6 +98,13 @@
                                             <option  @if($blog_post->status == 'draft') selected @endif value="draft">{{__('Draft')}}</option>
                                         </select>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="type">{{__('Type')}}</label>
+                                        <select name="type" id="type" class="form-control">
+                                            <option value="new">{{__('New')}}</option>
+                                            <option value="member">{{__('Member blog')}}</option>
+                                        </select>
+                                    </div>
                                     <x-media-upload :id="$blog_post->image" :name="'image'" :dimentions="'1920x1280'" :title="__('Image')"/>
                                     <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">{{__('Update Post')}}</button>
                                 </div>

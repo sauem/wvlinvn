@@ -11,7 +11,7 @@ class SystemController extends Controller
     public function switchLang(Request $request)
     {
         session()->put('lang', $request->post('lang', 'vi'));
-        Cache::put('lang', $request->post('lang'));
+        Cache::put('lang', $request->post('lang', 'vi'));
         return ['success' => true];
     }
 }

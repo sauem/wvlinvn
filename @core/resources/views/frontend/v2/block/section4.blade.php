@@ -12,13 +12,10 @@
                             <div class="members-wrap">
                                 <div class="members-carousel">
                                     @foreach($members as $member)
-                                        @php
-                                            $img = get_attachment_image_by_id($member->image, 'full');
-                                        @endphp
                                         <div class="member-item">
                                             <div class="img">
                                                 <a href="{{getMemberLink($member)}}">
-                                                    <img src="{{Arr::get($img, 'img_url')}}"/>
+                                                    <img src="{{_IMG($member->image)}}"/>
                                                 </a>
                                             </div>
                                             <p class="text">

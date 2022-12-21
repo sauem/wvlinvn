@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Blog;
 use App\BlogCategory;
 use App\Http\Controllers\Controller;
 
@@ -21,6 +22,11 @@ class WlinNetworkController extends Controller
             ->with(['blogs'])
             ->where(['slug' => $slug, 'status' => 'publish', 'lang' => get_user_lang()])
             ->firstOrFail();
-        return view("frontend.v2.blog.network-blogs", compact('network'));
+        $members = Blog::query()->whereIn('type', 'member')
+            ->limit(24)
+            ->orderBy('id', 'DESC')
+            ->get();
+
+        return view("frontend.v2.blog.network-blogs", compact('members', 'network'));
     }
 }
