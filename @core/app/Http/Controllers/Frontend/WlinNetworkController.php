@@ -22,7 +22,7 @@ class WlinNetworkController extends Controller
             ->with(['blogs'])
             ->where(['slug' => $slug, 'status' => 'publish', 'lang' => get_user_lang()])
             ->firstOrFail();
-        $members = Blog::query()->whereIn('type', 'member')
+        $members = Blog::query()->where('type', '=', 'member')
             ->limit(24)
             ->orderBy('id', 'DESC')
             ->get();
