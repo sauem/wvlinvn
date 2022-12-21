@@ -24,10 +24,15 @@
             <div class="col-md-5">
                 <ul>
                 @foreach($infos as $data)
-                   <li>
-                       <i class="{{$data->icon}}"></i>
-                       <span>{{$data->title}}</span>
-                       <span>{{$data->description}}</span>
+                   <li class="row">
+                       <div class="col-md-3">
+                           <i class="{{$data->icon}}"></i>
+                           <span>{{$data->title}}</span>
+                       </div>
+                       <div class="col-md-9">
+                           <span>{{$data->description}}</span>
+
+                       </div>
                    </li>
                 @endforeach
                 </ul>
