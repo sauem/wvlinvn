@@ -86,7 +86,7 @@
             </div>
         </section>
 
-        <section class="introduce-partners py-5" style="background-image: url("{{_IMG('about_partner_bg')}}")">
+        <section class="introduce-partners py-5" style="background-image: url("{{_IMG(option('about_partner_bg'))}}")">
         <div class="container">
             <div class="introduce-partners-wrap">
                 <img src="{{_IMG(option('about_partner_bg'))}}" class="img-fluid d-block d-md-block"/>
@@ -165,7 +165,7 @@
                     <div class="introduce-structure-title">{{option('about_structure_title')}}</div>
                 </div>
                 <div class="introduce-structure-content-img">
-                    <img src="{{_IMG('about_structure_img')}}" class="img-fluid">
+                    <img src="{{_IMG(option('about_structure_img'))}}" class="img-fluid">
                 </div>
             </div>
         </section>
@@ -176,7 +176,7 @@
                     <div class="introduce-role-title">{{option('about_role_title')}}</div>
                 </div>
                 <div class="introduce-role-content-img">
-                    <img src="{{_IMG('about_role_img')}}" class="img-fluid">
+                    <img src="{{_IMG(option('about_role_img'))}}" class="img-fluid">
                 </div>
             </div>
         </section>
