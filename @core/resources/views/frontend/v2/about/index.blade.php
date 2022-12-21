@@ -86,24 +86,24 @@
             </div>
         </section>
 
-        <section class="introduce-partners py-5" style="background-image: url("{!! _IMG(option('about_partner_bg')) !!}")">
-        <div class="container">
-            <div class="introduce-partners-wrap">
-                <img src="{{_IMG(option('about_partner_bg'))}}" class="img-fluid d-none d-md-block"/>
-                <div class="row align-items-center">
-                    <div class="col-sm-3">
-                        <div class="introduce-partners-title">
-                            {{option('about_partner_title')}}
+        <section class="introduce-partners py-5" style="background-image: url({{ _IMG(option('about_partner_bg'))}})">
+            <div class="container">
+                <div class="introduce-partners-wrap">
+                    <img src="{{_IMG(option('about_partner_bg'))}}" class="img-fluid d-none d-md-block"/>
+                    <div class="row align-items-center">
+                        <div class="col-sm-3">
+                            <div class="introduce-partners-title">
+                                {{option('about_partner_title')}}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="introduce-partners-content">
-                            {!! option('about_partner_content') !!}
+                        <div class="col-sm-9">
+                            <div class="introduce-partners-content">
+                                {!! option('about_partner_content') !!}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </section>
 
 
