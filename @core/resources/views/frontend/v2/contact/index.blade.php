@@ -21,15 +21,15 @@
 
                 </form>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <ul>
                 @foreach($infos as $data)
                    <li class="row">
-                       <div class="col-md-3">
+                       <div class="col-md-4">
                            <i class="{{$data->icon}}"></i>
                            <span>{{$data->title}}</span>
                        </div>
-                       <div class="col-md-9">
+                       <div class="col-md-8">
                            <span>{{$data->description}}</span>
 
                        </div>
