@@ -22,21 +22,15 @@
                 </form>
             </div>
             <div class="col-md-5">
+                <ul>
                 @foreach($infos as $data)
-                    <div class="col-md-6 col-lg-3">
-                        <div class="d-flex">
-                            <p class="d-flex align-items-center mr-2"><i class="mr-2 {{$data->icon}}"></i> {{$data->title}}: </p>
-                            <p>
-                            @php
-                                $info_details = !empty($data->description) ? explode("\n",$data->description) : [];
-                            @endphp
-                            @foreach($info_details as $item)
-                                <p class="details">{{$item}}</p>
-                                @endforeach
-                                </p>
-                        </div>
-                    </div>
+                   <li>
+                       <i class="{{$data->icon}}"></i>
+                       <span>{{$data->title}}</span>
+                       <span>{{$data->description}}</span>
+                   </li>
                 @endforeach
+                </ul>
             </div>
         </div>
     </div>
