@@ -107,7 +107,7 @@
         </section>
 
 
-        <section class="introduce-criteria">
+        <section class="introduce-criteria py-5">
             <div class="container">
                 <div class="introduce-criteria-wrap">
                     <div class="row align-items-center introduce-criteria-row-mobile">
@@ -132,7 +132,7 @@
             </div>
         </section>
 
-        <section class="introduce-criteria">
+        <section class="introduce-criteria py-5">
             <div class="container">
                 <div class="introduce-criteria-wrap">
                     <div class="row align-items-center">
@@ -159,10 +159,10 @@
         </section>
 
 
-        <section class="introduce-structure">
+        <section class="introduce-structure mb-5">
             <div class="container">
                 <div class="introduce-structure-header">
-                    <div class="introduce-structure-title">{{option('about_structure_title')}}</div>
+                    <div class="introduce-structure-title text-center my-4">{{option('about_structure_title')}}</div>
                 </div>
                 <div class="introduce-structure-content-img">
                     <img src="{{_IMG(option('about_structure_img'))}}" class="img-fluid">
@@ -173,7 +173,7 @@
         <section class="introduce-role">
             <div class="container">
                 <div class="introduce-role-header">
-                    <div class="introduce-role-title">{{option('about_role_title')}}</div>
+                    <div class="introduce-role-title text-center my-4">{{option('about_role_title')}}</div>
                 </div>
                 <div class="introduce-role-content-img">
                     <img src="{{_IMG(option('about_role_img'))}}" class="img-fluid">
