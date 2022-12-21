@@ -4,7 +4,7 @@
         $lang = get_user_lang();
     @endphp
     <main>
-        <section class="introduce-about">
+        <section class="introduce-about px-3 px-md-0">
             <div class="container">
                 <div class="introduce-about-title">{{option('about_title')}}</div>
                 <div class="row introduce-row-mobile">
@@ -28,7 +28,7 @@
             <div class="container">
                 <div
                         class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-3 row-cols-xl-3 mb-4 justify-content-center">
-                    <div class="col mb-4">
+                    <div class="col-md-4">
 
                         <div class="introduce-value-card">
                             <div class="introduce-value-card-img">
@@ -47,7 +47,8 @@
                         </div>
 
                     </div>
-                    <div class="col mb-4">
+                    <div class="col-md-4">
+
                         <div class="introduce-value-card">
                             <div class="introduce-value-card-img">
                                 <img src="{{_IMG(option('about_mission_img'))}}" alt=""/>
@@ -65,7 +66,7 @@
                         </div>
 
                     </div>
-                    <div class="col mb-4">
+                    <div class="col-md-4">
                         <div class="introduce-value-card">
                             <div class="introduce-value-card-img">
                                 <img src="{{_IMG(option('about_value_img'))}}" alt=""/>
