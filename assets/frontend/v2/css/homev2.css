@@ -446,14 +446,25 @@
       line-height: 22px; }
 
 @media (max-width: 576px) {
-  .header-navigation .header-right-nav .lang-dropdown {
-    margin-left: 20px; }
+  .header-navigation {
+    padding: 0; }
+    .header-navigation .header-right-nav .lang-dropdown {
+      margin-left: 20px; }
 
   .section-title {
     font-size: 24px; }
 
+  .header-navigation .navbar-toggler {
+    margin: 0 15px; }
+    .header-navigation .navbar-toggler span {
+      background-color: white; }
+
   .videos-wrap, .members-wrap {
     padding: 0; }
+    .videos-wrap .videos-carousel .slick-prev, .members-wrap .videos-carousel .slick-prev {
+      left: 0; }
+    .videos-wrap .videos-carousel .slick-next, .members-wrap .videos-carousel .slick-next {
+      right: 0; }
     .videos-wrap .videos-carousel .video-item, .members-wrap .videos-carousel .video-item {
       padding: 0; } }
 
