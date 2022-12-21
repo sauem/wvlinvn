@@ -89,7 +89,7 @@
         <section class="introduce-partners py-5" style="background-image: url({{ _IMG(option('about_partner_bg'))}})">
             <div class="container">
                 <div class="introduce-partners-wrap">
-                    <img src="{{_IMG(option('about_partner_bg'))}}" class="img-fluid d-none d-md-block"/>
+                    <img src="{{_IMG(option('about_partner_bg'))}}" class="img-fluid d-block d-md-none"/>
                     <div class="row align-items-center">
                         <div class="col-sm-3">
                             <div class="introduce-partners-title">
