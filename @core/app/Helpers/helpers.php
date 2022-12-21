@@ -1717,7 +1717,7 @@ function get_paytm_environment()
 
 function redirect_404_page()
 {
-    return view('frontend.pages.404');
+    return view('frontend.v2.404');
 }
 
 function get_future_date($current_days, $days)

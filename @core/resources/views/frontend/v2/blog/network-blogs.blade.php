@@ -33,6 +33,8 @@
                         </div>
                     @endforeach
                 </div>
+            @else
+                <h4 class="text-main">{{__('Oops! Not event found....')}}</h4>
             @endif
         </div>
 
