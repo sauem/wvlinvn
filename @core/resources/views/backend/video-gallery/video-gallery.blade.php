@@ -113,7 +113,9 @@
                                 <label for="lang">{{__('Language')}}</label>
                                 <select name="lang" class="form-control">
                                     @if(!empty($language))
-                                        <option value="{{$language->slug}}">{{$language->name}}</option>
+                                        @foreach($language as $lang)
+                                            <option value="{{$lang->slug}}">{{$lang->name}}</option>
+                                        @endforeach
                                     @endif
                                 </select>
                             </div>
@@ -157,7 +159,9 @@
                             <label for="lang">{{__('Language')}}</label>
                             <select name="lang" class="form-control">
                                 @if(!empty($language))
-                                    <option value="{{$language->slug}}">{{$language->name}}</option>
+                                    @foreach($language as $lang)
+                                        <option value="{{$lang->slug}}">{{$lang->name}}</option>
+                                    @endforeach
                                 @endif
                             </select>
                         </div>

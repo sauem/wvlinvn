@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Helpers\LanguageHelper;
 use App\Helpers\NexelitHelpers;
 use App\Http\Controllers\Controller;
+use App\Language;
 use App\VideoGallery;
 use Illuminate\Http\Request;
 
