@@ -7,6 +7,20 @@
                     <h4 class="section-title mb-4 text-main text-uppercase">{{$network->name}}</h4>
                 </div>
             </div>
+            <div class="row">
+                @if(!empty($network->children))
+                    @foreach($network->children as $children)
+                        <div class="col-md-2">
+                            <div class="network-item text-center">
+                                <a href="{{linkCategory($children)}}">
+                                    <img class="img-fluid" src="{{_IMG($children->image)}}">
+                                    <p class="text-main">{{$children->name}}</p>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
+            </div>
             @if(!empty($network->blogs))
                 <div class="list-blog row">
                     @foreach($network->blogs as $blog)
