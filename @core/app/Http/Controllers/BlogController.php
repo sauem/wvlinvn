@@ -184,7 +184,7 @@ class BlogController extends Controller
     public function category()
     {
         $all_category = BlogCategory::all()->groupBy('lang');
-        $categories = BlogCategory::all()->all();
+        $categories = BlogCategory::query()->get();
         $all_language = Language::all();
         return view('backend.pages.blog.category')->with([
             'all_category' => $all_category,
