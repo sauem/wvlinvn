@@ -191,8 +191,8 @@
                                 <select name="parent" class="form-control" id="edit_status">
                                     <option value="0">Danh mục gốc</option>
 
-                                @if(!empty(Arr::get($all_category, get_user_lang())))
-                                        @foreach(Arr::get($all_category, get_user_lang()) as $category)
+                                @if(!empty($categories))
+                                        @foreach($categories as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
                                     @endif
@@ -263,8 +263,8 @@
                             <select name="parent" class="form-control" id="parent">
                                 <option value="0">Danh mục gốc</option>
 
-                                @if(!empty(Arr::get($all_category, get_user_lang())))
-                                    @foreach(Arr::get($all_category, get_user_lang()) as $category)
+                                @if(!empty($categories))
+                                    @foreach($categories as $lang =>  $category)
                                         <option value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
                                 @endif
