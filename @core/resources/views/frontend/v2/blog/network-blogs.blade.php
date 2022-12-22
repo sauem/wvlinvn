@@ -60,7 +60,7 @@
                                     <div class="col-md-5">
                                         <div class="img">
                                             <a href="{{blogLink($blog)}}">
-                                                <img class="img-fluid" src="{{_IMG($blog->image))}}" alt=""/>
+                                                <img class="img-fluid" src="{{_IMG($blog->image)}}" alt=""/>
                                             </a>
                                         </div>
                                     </div>
