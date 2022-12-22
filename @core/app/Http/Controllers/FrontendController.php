@@ -118,7 +118,7 @@ class FrontendController extends Controller
         $all_work_category = WorksCategory::find($works_cat_ids);
 
         $all_gallery_images = VideoGallery::query()
-            ->where(['status' => 'publish'])
+            ->where(['status' => 'publish', 'lang' => userLang()])
             ->limit(24)->get();
         $memberCate = BlogCategory::query()
             ->where('type', '=', 'member')
