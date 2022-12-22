@@ -27,10 +27,10 @@ class WlinNetworkController extends Controller
             ->orderBy('id', 'DESC')
             ->get();
         $blogs = Blog::query()
-            ->where(['slug' => $slug, 'status' => 'publish',
+            ->where(['status' => 'publish',
                 'breaking_news' => 1,
                 'lang' => get_user_lang()])
-            ->get();
-        return view("frontend.v2.blog.network-blogs", compact('blogs','members', 'network'));
+            ->limit(5)->get();
+        return view("frontend.v2.blog.network-blogs", compact('blogs', 'members', 'network'));
     }
 }
