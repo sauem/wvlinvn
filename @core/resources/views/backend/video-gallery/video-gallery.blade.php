@@ -5,12 +5,14 @@
 @section('style')
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="//cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
     <style>
-        .dataTables_wrapper .dataTables_paginate .paginate_button{
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
             padding: 0 !important;
         }
+
         div.dataTables_wrapper div.dataTables_length select {
             width: 60px;
             display: inline-block;
@@ -48,6 +50,7 @@
                             </th>
                             <th>{{__('ID')}}</th>
                             <th>{{__('Title')}}</th>
+                            <th>{{__('Lang')}}</th>
                             <th>{{__('Action')}}</th>
                             </thead>
                             <tbody>
@@ -55,11 +58,13 @@
                                 <tr>
                                     <td>
                                         <div class="bulk-checkbox-wrapper">
-                                            <input type="checkbox" class="bulk-checkbox" name="bulk_delete[]" value="{{$data->id}}">
+                                            <input type="checkbox" class="bulk-checkbox" name="bulk_delete[]"
+                                                   value="{{$data->id}}">
                                         </div>
                                     </td>
                                     <td>{{$data->id}}</td>
                                     <td>{{$data->title}}</td>
+                                    <td>{{$data->lang}}</td>
                                     <td>
                                         <x-delete-popover :url="route('admin.video.gallery.delete',$data->id)"/>
                                         <a href="#"
@@ -70,6 +75,7 @@
                                            data-title="{{$data->title}}"
                                            data-embedcode="{{$data->embed_code}}"
                                            data-status="{{$data->status}}"
+                                           data-lang="{{$data->lang}}"
                                         >
                                             <i class="ti-pencil"></i>
                                         </a>
@@ -103,6 +109,14 @@
                                     <option value="draft">{{__('Draft')}}</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="lang">{{__('Language')}}</label>
+                                <select name="lang" class="form-control">
+                                    @if(!empty($language))
+                                        <option value="{{$language->slug}}">{{$language->name}}</option>
+                                    @endif
+                                </select>
+                            </div>
                             <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">{{__('Save Changes')}}</button>
                         </form>
                     </div>
@@ -118,7 +132,8 @@
                     <h5 class="modal-title">{{__('Edit Testimonial Item')}}</h5>
                     <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
                 </div>
-                <form action="{{route('admin.video.gallery.update')}}" id="testimonial_edit_modal_form"  method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.video.gallery.update')}}" id="testimonial_edit_modal_form" method="post"
+                      enctype="multipart/form-data">
                     <div class="modal-body">
                         @csrf
                         <input type="hidden" name="id" id="gallery_id">
@@ -138,6 +153,14 @@
                                 <option value="draft">{{__('Draft')}}</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="lang">{{__('Language')}}</label>
+                            <select name="lang" class="form-control">
+                                @if(!empty($language))
+                                    <option value="{{$language->slug}}">{{$language->name}}</option>
+                                @endif
+                            </select>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">{{__('Close')}}</button>
@@ -153,25 +176,25 @@
     <script>
         $(document).ready(function () {
 
-            $(document).on('click','#bulk_delete_btn',function (e) {
+            $(document).on('click', '#bulk_delete_btn', function (e) {
                 e.preventDefault();
 
                 var bulkOption = $('#bulk_option').val();
-                var allCheckbox =  $('.bulk-checkbox:checked');
+                var allCheckbox = $('.bulk-checkbox:checked');
                 var allIds = [];
-                allCheckbox.each(function(index,value){
+                allCheckbox.each(function (index, value) {
                     allIds.push($(this).val());
                 });
-                if(allIds != '' && bulkOption == 'delete'){
+                if (allIds != '' && bulkOption == 'delete') {
                     $(this).text('{{__('Deleting...')}}');
                     $.ajax({
-                        'type' : "POST",
-                        'url' : "{{route('admin.video.gallery.bulk.action')}}",
-                        'data' : {
+                        'type': "POST",
+                        'url': "{{route('admin.video.gallery.bulk.action')}}",
+                        'data': {
                             _token: "{{csrf_token()}}",
                             ids: allIds
                         },
-                        success:function (data) {
+                        success: function (data) {
                             location.reload();
                         }
                     });
@@ -179,27 +202,28 @@
 
             });
 
-            $('.all-checkbox').on('change',function (e) {
+            $('.all-checkbox').on('change', function (e) {
                 e.preventDefault();
                 var value = $('.all-checkbox').is(':checked');
                 var allChek = $(this).parent().parent().parent().parent().parent().find('.bulk-checkbox');
                 //have write code here fr
-                if( value == true){
-                    allChek.prop('checked',true);
-                }else{
-                    allChek.prop('checked',false);
+                if (value == true) {
+                    allChek.prop('checked', true);
+                } else {
+                    allChek.prop('checked', false);
                 }
             });
 
-            $(document).on('click','.testimonial_edit_btn',function(){
+            $(document).on('click', '.testimonial_edit_btn', function () {
                 var el = $(this);
                 var id = el.data('id');
 
                 var form = $('#testimonial_edit_modal_form');
                 form.find('#gallery_id').val(id);
                 form.find('input[name="title"]').val(el.data('title'));
+                form.find('input[name="lang"]').val(el.data('lang'));
                 form.find('textarea[name="embed_code"]').val(el.data('embedcode'));
-                form.find('select[name="status"] option[value="'+el.data('status')+'"]').attr('selected',true);
+                form.find('select[name="status"] option[value="' + el.data('status') + '"]').attr('selected', true);
             });
         });
     </script>
@@ -210,14 +234,14 @@
     <script src="//cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script src="//cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('.table-wrap > table').DataTable( {
-                "order": [[ 1, "desc" ]],
-                'columnDefs' : [{
-                    'targets' : 'no-sort',
-                    'orderable' : false
+        $(document).ready(function () {
+            $('.table-wrap > table').DataTable({
+                "order": [[1, "desc"]],
+                'columnDefs': [{
+                    'targets': 'no-sort',
+                    'orderable': false
                 }]
-            } );
-        } );
+            });
+        });
     </script>
 @endsection

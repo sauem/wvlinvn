@@ -18,7 +18,8 @@ class VideoGalleryController extends Controller
 
     public function index(){
         $all_gallery = VideoGallery::all();
-        return view(self::BASE_PATH.'video-gallery',compact('all_gallery'));
+        $language = LanguageHelper::all_languages();
+        return view(self::BASE_PATH.'video-gallery',compact('all_gallery','language'));
     }
 
     public function store(Request $request){
@@ -30,7 +31,8 @@ class VideoGalleryController extends Controller
         VideoGallery::create([
             'title' => $request->title,
             'embed_code' => $request->embed_code,
-            'status' => $request->status
+            'status' => $request->status,
+            'lang' => $request->lang
         ]);
         return redirect()->back()->with(NexelitHelpers::item_new());
     }
@@ -43,7 +45,8 @@ class VideoGalleryController extends Controller
         VideoGallery::find($request->id)->update([
             'title' => $request->title,
             'embed_code' => $request->embed_code,
-            'status' => $request->status
+            'status' => $request->status,
+            'lang' => $request->lang
         ]);
         return redirect()->back()->with(NexelitHelpers::item_update());
     }
