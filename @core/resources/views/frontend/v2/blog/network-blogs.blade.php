@@ -55,15 +55,12 @@
                 @if(!empty($blogs))
                     <div class="list-blog">
                         @foreach($blogs as $blog)
-                            @php
-                                $img = get_attachment_image_by_id($blog->image,'full');
-                            @endphp
                             <div class="blog-item">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
                                         <div class="img">
                                             <a href="{{blogLink($blog)}}">
-                                                <img class="img-fluid" src="{{Arr::get($img,'img_url')}}" alt=""/>
+                                                <img class="img-fluid" src="{{_IMG($blog->image))}}" alt=""/>
                                             </a>
                                         </div>
                                     </div>
