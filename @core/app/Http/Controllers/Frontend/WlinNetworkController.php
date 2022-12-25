@@ -33,4 +33,40 @@ class WlinNetworkController extends Controller
             ->limit(5)->get();
         return view("frontend.v2.blog.network-blogs", compact('blogs', 'members', 'network'));
     }
+
+    public function members($slug)
+    {
+        $network = BlogCategory::query()
+            ->with(['blogs'])
+            ->where(['slug' => $slug, 'status' => 'publish', 'lang' => get_user_lang()])
+            ->firstOrFail();
+        $members = Blog::query()->where('type', '=', 'member')
+            ->limit(24)
+            ->orderBy('id', 'DESC')
+            ->get();
+        $blogs = Blog::query()
+            ->where(['status' => 'publish',
+                'breaking_news' => 1,
+                'lang' => get_user_lang()])
+            ->limit(5)->get();
+        return view("frontend.v2.blog.network-blogs", compact('blogs', 'members', 'network'));
+    }
+
+    public function partners($slug)
+    {
+        $network = BlogCategory::query()
+            ->with(['blogs'])
+            ->where(['slug' => $slug, 'status' => 'publish', 'lang' => get_user_lang()])
+            ->firstOrFail();
+        $members = Blog::query()->where('type', '=', 'partners')
+            ->limit(24)
+            ->orderBy('id', 'DESC')
+            ->get();
+        $blogs = Blog::query()
+            ->where(['status' => 'publish',
+                'breaking_news' => 1,
+                'lang' => get_user_lang()])
+            ->limit(5)->get();
+        return view("frontend.v2.blog.network-blogs", compact('blogs', 'members', 'network'));
+    }
 }

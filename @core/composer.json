@@ -6,12 +6,6 @@
         "framework",
         "laravel"
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/Sharifur/paymentgateway.git"
-        }
-    ],
     "license": "MIT",
     "require": {
         "php": "^7.4|^8.0",
@@ -29,8 +23,7 @@
         "mews/purifier": "^3.3",
         "simplesoftwareio/simple-qrcode": "^4.2",
         "spatie/laravel-feed": "^2.7",
-        "spatie/laravel-sitemap": "^5.7",
-        "xgenious/paymentgateway": "^2.0"
+        "spatie/laravel-sitemap": "^5.7"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",

@@ -785,7 +785,9 @@ ITEM;
     {
         $default_lang = Language::where('default', 1)->first();
         $lang = !empty(session()->get('lang')) ? session()->get('lang') : $default_lang->slug;
-        $all_blogs = Blog::where(['blog_categories_id' => $id, 'lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->paginate(get_static_option('blog_page_item'));
+        $all_blogs = Blog::where(['blog_categories_id' => $id, 'lang' => $lang, 'status' => 'publish'])
+            ->orderBy('id', 'desc')->paginate(get_static_option('blog_page_item'));
+
         if (empty($all_blogs)) {
             abort(404);
         }

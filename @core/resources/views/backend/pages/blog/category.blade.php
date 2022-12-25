@@ -182,6 +182,7 @@
                                 <select name="type" class="form-control" id="edit_status">
                                     <option value="blog">{{__("Blog")}}</option>
                                     <option value="member">{{__("Member")}}</option>
+                                    <option value="partner">{{__("Partners")}}</option>
                                     <option value="network">{{__("Wlin Networks")}}</option>
                                 </select>
                             </div>
@@ -254,6 +255,7 @@
                             <select name="type" class="form-control" id="type">
                                 <option value="blog">{{__("Blog")}}</option>
                                 <option value="member">{{__("Member")}}</option>
+                                <option value="partner">{{__("Partners")}}</option>
                                 <option value="network">{{__("Wlin Networks")}}</option>
                             </select>
                         </div>
