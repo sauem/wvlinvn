@@ -196,7 +196,7 @@ class BlogController extends Controller
     public function new_category(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:191|unique:blog_categories',
+            'name' => 'required|string|max:191',
             'lang' => 'required|string|max:191',
             'status' => 'required|string|max:191',
             'image' => 'nullable|string|max:191',
