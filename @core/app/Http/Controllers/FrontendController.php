@@ -758,12 +758,12 @@ ITEM;
         $default_lang = Language::where('default', 1)->first();
         $lang = !empty(session()->get('lang')) ? session()->get('lang') : $default_lang->slug;
         $all_blogs = Blog::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->paginate(get_static_option('blog_page_item'));
-        $categoríes = BlogCategory::query()->where(['type' => 'blog'])->get();
+        $categories = BlogCategory::query()->where(['type' => 'blog', 'lang' => userLang()])->get();
         $all_header_slider = HeaderSlider::where('lang', $lang)->get();
 
         return view('frontend.v2.blog.index')->with([
             'all_blogs' => $all_blogs,
-            'categories' => $categoríes,
+            'categories' => $categories,
             'sliders' => $all_header_slider
         ]);
     }
