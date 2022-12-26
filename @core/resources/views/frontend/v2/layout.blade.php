@@ -11,7 +11,9 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Website WIC</title>
+    {!! render_favicon_by_id(filter_static_option_value('site_favicon',$global_static_field_data)) !!}
+    @include('frontend.partials.og-meta')
+
     <link rel="stylesheet" href="/assets/frontend/v2/css/default.css">
     <link rel="stylesheet" href="/assets/frontend/v2/css/style.css">
     <link rel="stylesheet" href="/assets/frontend/v2/css/responsive.css">
