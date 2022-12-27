@@ -47,12 +47,15 @@ $purple: #C70A80;
   .title{
     color: white;
   }
-  .follow-list .single-flex-list{
+  .follow-list {
     display: flex;
+    .single-flex-list{
+      display: flex;
 
-    i{
-      font-size: 32px;
-      margin-right: 10px;
+      i{
+        font-size: 32px;
+        margin-right: 10px;
+      }
     }
   }
 }

@@ -35,11 +35,13 @@
 
 .widget .title {
   color: white; }
-.widget .follow-list .single-flex-list {
+.widget .follow-list {
   display: flex; }
-  .widget .follow-list .single-flex-list i {
-    font-size: 32px;
-    margin-right: 10px; }
+  .widget .follow-list .single-flex-list {
+    display: flex; }
+    .widget .follow-list .single-flex-list i {
+      font-size: 32px;
+      margin-right: 10px; }
 
 .btn-link {
   padding: 16px 32px;
