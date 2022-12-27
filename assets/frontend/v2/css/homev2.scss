@@ -43,7 +43,19 @@ $purple: #C70A80;
     border-radius: 0;
   }
 }
+.widget{
+  .title{
+    color: white;
+  }
+  .follow-list .single-flex-list{
+    display: flex;
 
+    i{
+      font-size: 32px;
+      margin-right: 10px;
+    }
+  }
+}
 .btn-link {
   padding: 16px 32px;
   gap: 8px;
