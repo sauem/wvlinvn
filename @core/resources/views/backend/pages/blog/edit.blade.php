@@ -75,7 +75,8 @@
                                         <select name="category[]" multiple class="form-control select2" id="category">
                                             <option value="">{{__("Select Category")}}</option>
                                             @foreach($all_category as $category)
-                                                <option @if($blog_post->blog_categories_id == $category->id || in_array( $category->id, $blog_post->blog_categories_id)) selected
+                                                @php($ids = is_array($blog_post->blog_categories_id) ?  $blog_post->blog_categories_id : [$blog_post->blog_categories_id])
+                                                <option @if(in_array( $category->id, $ids)) selected
                                                         @endif value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
                                         </select>

@@ -768,16 +768,20 @@ ITEM;
         ]);
     }
 
-    public function blog_category($category)
+    public function blog_category($categorySlg)
     {
-        $categories = BlogCategory::where(['lang' => get_user_lang(), 'status' => 'publish', 'slug' => $category])
-            ->orderBy('id', 'desc')->paginate(get_static_option('blog_page_item'));
-
+        $category = BlogCategory::query()
+            ->where(['lang' => get_user_lang(), 'status' => 'publish', 'slug' => $categorySlg])
+            ->firstOrFail();
+        $blogs = Blog::query()
+            ->where(['lang' => userLang(), 'status' => 'publish'])
+            ->whereJsonContains('blog_categories_id', "$category->id")
+            ->get();
         $all_header_slider = HeaderSlider::where('lang', get_user_lang())->get();
-
         return view('frontend.v2.blog.category-news')->with([
-            'categories' => $categories,
+            'categories' => $category,
             'sliders' => $all_header_slider,
+            'blogs' => $blogs
         ]);
     }
 
@@ -838,7 +842,7 @@ ITEM;
         ]);
     }
 
-    public function blog_single_page($category, $slug)
+    public function blog_single_page($cateSlug, $slug)
     {
         $default_lang = Language::where('default', 1)->first();
         $lang = !empty(session()->get('lang')) ? session()->get('lang') : $default_lang->slug;
@@ -847,10 +851,14 @@ ITEM;
         if (empty($blog_post)) {
             abort(404);
         }
-        $all_recent_blogs = Blog::where(['lang' => $lang, 'status' => 'publish'])->orderBy('id', 'desc')->paginate(get_static_option('blog_page_recent_post_widget_item'));
+        $all_recent_blogs = Blog::where(['lang' => $lang, 'status' => 'publish'])->take(10)->get();
         $all_category = BlogCategory::where(['status' => 'publish', 'lang' => $lang])->orderBy('id', 'desc')->get();
+        $category = BlogCategory::query()->where(['lang' => userLang(), 'slug' => $cateSlug])->firstOrFail();
 
-        $all_related_blog = Blog::where(['lang' => $lang, 'status' => 'publish'])->Where('blog_categories_id', $blog_post->blog_categories_id)->orderBy('id', 'desc')->take(6)->get();
+        $all_related_blog = Blog::query()
+            ->where(['lang' => $lang, 'status' => 'publish'])
+            ->whereJsonContains('blog_categories_id', "$category->id")
+            ->orderBy('id', 'desc')->take(6)->get();
         //frontend.pages.blog.blog-single
         return view('frontend.v2.blog.detail')->with([
             'blog_post' => $blog_post,

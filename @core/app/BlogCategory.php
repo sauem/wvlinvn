@@ -23,7 +23,7 @@ class BlogCategory extends Model
 
     public function parent()
     {
-        return $this->belongsTo(BlogCategory::class, 'parent');
+        return $this->hasOne(BlogCategory::class, 'parent');
     }
 
     public function children()
@@ -33,6 +33,6 @@ class BlogCategory extends Model
 
     public function blogs()
     {
-        return $this->hasMany(Blog::class,  'blog_categories_id');
+        return $this->hasMany(Blog::class,  'id', 'blog_categories_id');
     }
 }

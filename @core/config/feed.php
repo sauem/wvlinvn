@@ -31,6 +31,7 @@ return [
              * The type to be used in the <link> tag
              */
             'type' => 'application/atom+xml',
+            'format' => 'atom',
         ],
     ],
 ];

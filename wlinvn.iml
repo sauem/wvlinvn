@@ -10,6 +10,10 @@
       <excludeFolder url="file://$MODULE_DIR$/@core/vendor/doctrine/deprecations" />
       <excludeFolder url="file://$MODULE_DIR$/@core/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/@core/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/@core/vendor/spatie/laravel-package-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/@core/vendor/anandsiddharth/laravel-paytm-wallet" />
+      <excludeFolder url="file://$MODULE_DIR$/@core/vendor/unicodeveloper/laravel-paystack" />
+      <excludeFolder url="file://$MODULE_DIR$/@core/vendor/paytabscom/laravel_paytabs" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

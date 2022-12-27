@@ -14,20 +14,18 @@
                 <div class="ads mb-4">
                     <img src="/assets/frontend/img/ads-sidebar.jpeg" class="img-fluid w-100"/>
                 </div>
-                <h5 class="text-main text-center line-bottom">CÓ THỂ BẠN QUAN TÂM</h5>
+                <h5 class="text-main text-center line-bottom">{{__('INTERESTED')}}</h5>
 
                 <div class="list-blog">
                     @if(!empty($all_recent_blogs))
                         @foreach($all_recent_blogs as $blog)
-                            @php
-                                $img = get_attachment_image_by_id($blog->image,'full');
-                            @endphp
+
                             <div class="blog-item">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
                                         <div class="img">
                                             <a href="{{blogLink($blog)}}">
-                                                <img class="img-fluid" src="{{Arr::get($img,'img_url')}}" alt=""/>
+                                                <img class="img-fluid" src="{{_IMG($blog->image)}}" alt=""/>
                                             </a>
                                         </div>
                                     </div>

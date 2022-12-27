@@ -14,7 +14,7 @@ class Blog extends Model implements Feedable
 
     public function category()
     {
-        return $this->belongsTo('App\BlogCategory', 'blog_categories_id');
+        return $this->hasOne(BlogCategory::class,'id','blog_categories_id');
     }
 
     public function user()
@@ -28,7 +28,9 @@ class Blog extends Model implements Feedable
         'blog_categories_id' => 'array'
     ];
 
-    public function toFeedItem()
+    protected $appends = ['blog_categories_id'];
+
+    public function toFeedItem() : FeedItem
     {
         return FeedItem::create([
             'id' => $this->id,
