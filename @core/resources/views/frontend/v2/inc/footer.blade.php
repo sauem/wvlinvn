@@ -1,4 +1,4 @@
-<footer class="bg-main-purple py-5">
+<footer class="bg-main-purple py-md-5 py-3">
     <div class="container">
         <div class="row">
             <div class="col-md-3">
