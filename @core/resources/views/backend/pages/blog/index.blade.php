@@ -103,7 +103,7 @@
                                                 <td>{{$data->author}}</td>
                                                 <td>
                                                 @if(!empty($data->blog_categories_id))
-                                                        {{get_blog_category_by_id($data->blog_categories_id)}}
+                                                        {!! get_blog_category_by_id($data->blog_categories_id) !!}
                                                 @endif
                                                 </td>
                                                 <td>
@@ -116,7 +116,7 @@
                                                 <td>{{date_format($data->created_at,'d M Y')}}</td>
                                                 <td>
                                                     <x-delete-popover :url="route('admin.blog.delete',$data->id)"/>
-                                                   
+
                                                     <a class="btn btn-xs btn-primary btn-xs mb-3 mr-1" href="{{route('admin.blog.edit',$data->id)}}">
                                                         <i class="ti-pencil"></i>
                                                     </a>

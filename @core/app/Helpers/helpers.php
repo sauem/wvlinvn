@@ -1347,15 +1347,18 @@ function get_visitor_country()
 
 function get_blog_category_by_id($id, $type = '', $class = '')
 {
+    $ids = is_array($id) ? $id : [$id];
     $return_val = __('uncategorized');
-    $blog_cat = \App\BlogCategory::find($id);
+    $catName = '';
+    $blog_cat = \App\BlogCategory::query()
+        ->orWhereIn('id', $ids)
+        ->get();
     if (!empty($blog_cat)) {
-        $return_val = $blog_cat->name;
-        if ($type == 'link') {
-            $return_val = '<a class="' . $class . '" href="' . route('frontend.blog.category', ['id' => $blog_cat->id, 'any' => Str::slug($blog_cat->name)]) . '">' . $blog_cat->name . '</a>';
+        foreach ($blog_cat as $key => $cat) {
+            $catName .= "<span class='badge badge-secondary'>$cat->name</span><br/>";
         }
+        return $catName;
     }
-
     return $return_val;
 }
 

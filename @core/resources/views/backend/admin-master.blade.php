@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{{asset('assets/backend/css/default-css.css')}}">
     <link rel="stylesheet" href="{{asset('assets/backend/css/styles.css')}}">
     <link rel="stylesheet" href="{{asset('assets/backend/css/responsive.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
     <link rel="stylesheet" href="{{asset('assets/backend/css/fontawesome-iconpicker.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/fontawesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/frontend/css/flaticon.css')}}">
@@ -142,6 +143,7 @@
 <script src="{{asset('assets/backend/js/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{asset('assets/backend/js/sweetalert2.js')}}"></script>
 @yield('script')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 <script src="{{asset('assets/backend/js/plugins.js')}}"></script>
 <script src="{{asset('assets/backend/js/scripts.js')}}"></script>
 @if(!empty(get_static_option('site_admin_panel_nav_sticky')))
@@ -188,7 +190,7 @@
                   }
                 });
             });
-    
+
             $(document).on('click','.swal_change_language_button',function(e){
                 e.preventDefault();
                 Swal.fire({
@@ -205,7 +207,7 @@
                     }
                 });
             });
-    
+
             $(document).on('click','.swal_change_approve_payment_button',function(e){
                 e.preventDefault();
                 Swal.fire({
@@ -221,7 +223,7 @@
                     }
                 });
             });
-        
+
         });
 
     })(jQuery);

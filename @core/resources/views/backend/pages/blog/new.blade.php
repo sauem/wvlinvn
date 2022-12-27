@@ -33,55 +33,63 @@
                                         <select name="lang" id="language" class="form-control">
                                             <option value="">{{__('Select Language')}}</option>
                                             @foreach($all_languages as $lang)
-                                            <option value="{{$lang->slug}}">{{$lang->name}}</option>
+                                                <option value="{{$lang->slug}}">{{$lang->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="title">{{__('Title')}}</label>
-                                        <input type="text" class="form-control"  value="{{old('title')}}" name="title" placeholder="{{__('Title')}}">
+                                        <input type="text" class="form-control" value="{{old('title')}}" name="title"
+                                               placeholder="{{__('Title')}}">
                                     </div>
                                     <div class="form-group">
                                         <label>{{__('Content')}}</label>
-                                        <input type="hidden" name="blog_content" >
+                                        <input type="hidden" name="blog_content">
                                         <div class="summernote"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="meta_tags">{{__('Meta Tags')}}</label>
-                                        <input type="text" name="meta_tags"  class="form-control" value="{{old('meta_tags')}}" data-role="tagsinput" id="meta_tags">
+                                        <input type="text" name="meta_tags" class="form-control"
+                                               value="{{old('meta_tags')}}" data-role="tagsinput" id="meta_tags">
                                     </div>
                                     <div class="form-group">
                                         <label for="meta_description">{{__('Meta Description')}}</label>
-                                        <textarea name="meta_description"  class="form-control" rows="5" id="meta_description"></textarea>
+                                        <textarea name="meta_description" class="form-control" rows="5"
+                                                  id="meta_description"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="title">{{__('Slug')}}</label>
-                                        <input type="text" class="form-control"  id="slug"  value="{{old('slug')}}"  name="slug" placeholder="{{__('Slug')}}">
+                                        <input type="text" class="form-control" id="slug" value="{{old('slug')}}"
+                                               name="slug" placeholder="{{__('Slug')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="title">{{__('Excerpt')}}</label>
-                                        <textarea name="excerpt" id="excerpt" class="form-control max-height-150" cols="30" rows="10"></textarea>
+                                        <textarea name="excerpt" id="excerpt" class="form-control max-height-150"
+                                                  cols="30" rows="10"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="category">{{__('Category')}}</label>
-                                        <select name="category" class="form-control" id="category">
+                                        <select multiple="multiple" name="category[]" class="form-control select2" id="category">
                                             <option value="">{{__("Select Category")}}</option>
                                         </select>
                                         <span class="info-text">{{__('select language to get category by language')}}</span>
                                     </div>
                                     <div class="form-group">
                                         <label for="title">{{__('Tags')}}</label>
-                                        <input type="text" class="form-control" name="tags" value="{{old('tags')}}" data-role="tagsinput">
+                                        <input type="text" class="form-control" name="tags" value="{{old('tags')}}"
+                                               data-role="tagsinput">
                                     </div>
                                     <div class="form-group">
                                         <label for="author">{{__('Author Name')}}</label>
-                                        <input type="text" class="form-control" name="author" id="author" value="{{old('author')}}">
+                                        <input type="text" class="form-control" name="author" id="author"
+                                               value="{{old('author')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="video_url">{{__('Video Url')}}</label>
-                                        <input type="text" class="form-control" name="video_url" value="{{old('video_url')}}">
+                                        <input type="text" class="form-control" name="video_url"
+                                               value="{{old('video_url')}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="breaking_news"><strong>{{__('Is Breaking News')}}</strong></label>
@@ -105,8 +113,10 @@
                                         </select>
                                     </div>
 
-                                    <x-media-upload :id="''" :name="'image'" :dimentions="'1920x1280'" :title="__('Image')"/>
-                                    <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">{{__('Add New Post')}}</button>
+                                    <x-media-upload :id="''" :name="'image'" :dimentions="'1920x1280'"
+                                                    :title="__('Image')"/>
+                                    <button type="submit"
+                                            class="btn btn-primary mt-4 pr-4 pl-4">{{__('Add New Post')}}</button>
                                 </div>
                             </div>
                         </form>
@@ -125,15 +135,14 @@
         $(document).ready(function () {
 
 
-
-            $(document).on('click','.category_edit_btn',function(){
+            $(document).on('click', '.category_edit_btn', function () {
                 var el = $(this);
                 var id = el.data('id');
                 var name = el.data('name');
                 var status = el.data('status');
                 var modal = $('#category_edit_modal');
                 modal.find('#category_id').val(id);
-                modal.find('#edit_status option[value="'+status+'"]').attr('selected',true);
+                modal.find('#edit_status option[value="' + status + '"]').attr('selected', true);
                 modal.find('#edit_name').val(name);
             });
             $('.summernote').summernote({
@@ -142,34 +151,35 @@
                     theme: 'monokai'
                 },
                 callbacks: {
-                    onChange: function(contents, $editable) {
+                    onChange: function (contents, $editable) {
                         $(this).prev('input').val(contents);
                     }
                 }
             });
-            if($('.summernote').length > 1){
-                $('.summernote').each(function(index,value){
+            if ($('.summernote').length > 1) {
+                $('.summernote').each(function (index, value) {
                     $(this).summernote('code', $(this).data('content'));
                 });
             }
 
-            $(document).on('change','#language',function(e){
-               e.preventDefault();
-               var selectedLang = $(this).val();
-               $.ajax({
-                  url: "{{route('admin.blog.lang.cat')}}",
-                  type: "POST",
-                  data: {
-                      _token : "{{csrf_token()}}",
-                      lang : selectedLang
-                  },
-                  success:function (data) {
-                      $('#category').html('<option value="">Select Category</option>');
-                      $.each(data,function(index,value){
-                          $('#category').append('<option value="'+value.id+'">'+value.name+'</option>')
-                      });
-                  }
-               });
+            $(document).on('change', '#language', function (e) {
+                e.preventDefault();
+                var selectedLang = $(this).val();
+                $.ajax({
+                    url: "{{route('admin.blog.lang.cat')}}",
+                    type: "POST",
+                    data: {
+                        _token: "{{csrf_token()}}",
+                        lang: selectedLang
+                    },
+                    success: function (data) {
+                        $('#category').html('<option value="">Select Category</option>');
+                        $.each(data, function (index, value) {
+                            $('#category').append('<option value="' + value.id + '">' + value.name + '</option>')
+                        });
+                        $('.select2').select2();
+                    }
+                });
             });
         });
     </script>

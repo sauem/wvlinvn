@@ -24,7 +24,8 @@ class Blog extends Model implements Feedable
 
     protected $casts = [
         'breaking_news' => 'integer',
-        'user_id' => 'integer'
+        'user_id' => 'integer',
+        'blog_categories_id' => 'array'
     ];
 
     public function toFeedItem()
