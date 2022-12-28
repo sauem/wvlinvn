@@ -1004,7 +1004,7 @@ button {
 }
 
 .header-navigation.breakpoint-on .primary-menu {
-    padding-bottom: 15px
+    padding: 10px 0;
 }
 
 .header-navigation.breakpoint-on .nav-menu {
