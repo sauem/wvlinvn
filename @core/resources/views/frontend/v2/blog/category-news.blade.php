@@ -30,6 +30,9 @@
                                 @endforeach
                             @endif
                         </div>
+                        <div class="text-center">
+                            {{$blogs->links()}}
+                        </div>
                     </div>
                 </div>
             </div>
