@@ -1,5 +1,5 @@
 @isset($about)
-    <section class="py-5">
+    <section class="py-md-5 pt-0 pb-5">
         <div class="bg-light-purple py-md-5 py-4 p-md-4">
             <div class="container">
                 <div class="row align-items-center">
