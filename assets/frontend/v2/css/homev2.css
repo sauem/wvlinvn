@@ -463,6 +463,10 @@
       line-height: 22px; }
 
 @media (max-width: 576px) {
+  .header-navigation.breakpoint-on .primary-menu{
+    padding: 10px 0;
+  }
+  
   .header-navigation.breakpoint-on {
     padding: 0; }
 
