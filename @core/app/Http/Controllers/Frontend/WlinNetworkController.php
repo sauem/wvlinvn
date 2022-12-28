@@ -69,4 +69,13 @@ class WlinNetworkController extends Controller
             ->limit(5)->get();
         return view("frontend.v2.blog.network-blogs", compact('blogs', 'members', 'network'));
     }
+
+    public function world()
+    {
+        $categories = BlogCategory::query()
+            ->where(['type' => 'blog', 'status' => 'publish', 'lang' => userLang()])
+            ->with(['blogs'])
+            ->get();
+        return view('frontend.v2.blog.world-category', compact('categories'));
+    }
 }

@@ -110,6 +110,7 @@
                                         <select name="type" id="type" class="form-control">
                                             <option value="new">{{__('New')}}</option>
                                             <option value="member">{{__('Member blog')}}</option>
+                                            <option value="world">{{__('Wlin World')}}</option>
                                         </select>
                                     </div>
 

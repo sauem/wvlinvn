@@ -180,10 +180,11 @@
                             <div class="form-group">
                                 <label for="edit_status">{{__('Type')}}</label>
                                 <select name="type" class="form-control" id="edit_status">
-                                    <option value="blog">{{__("Blog")}}</option>
+                                    <option value="blog">{{__("Wlin World")}}</option>
                                     <option value="member">{{__("Member")}}</option>
                                     <option value="partner">{{__("Partners")}}</option>
                                     <option value="network">{{__("Wlin Networks")}}</option>
+                                    <option value="news">{{__("Wlin news")}}</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -192,7 +193,7 @@
                                 <select name="parent" class="form-control" id="edit_status">
                                     <option value="0">Danh mục gốc</option>
 
-                                @if(!empty($categories))
+                                    @if(!empty($categories))
                                         @foreach($categories as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                         @endforeach
@@ -253,10 +254,11 @@
                         <div class="form-group">
                             <label for="edit_status">{{__('Type')}}</label>
                             <select name="type" class="form-control" id="type">
-                                <option value="blog">{{__("Blog")}}</option>
+                                <option value="blog">{{__("Wlin World")}}</option>
                                 <option value="member">{{__("Member")}}</option>
                                 <option value="partner">{{__("Partners")}}</option>
                                 <option value="network">{{__("Wlin Networks")}}</option>
+                                <option value="news">{{__("Wlin news")}}</option>
                             </select>
                         </div>
                         <div class="form-group">

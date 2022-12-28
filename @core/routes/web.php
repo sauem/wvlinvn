@@ -418,6 +418,7 @@ Route::group(['middleware' => ['setlang:frontend', 'globalVariable', 'maintains_
     Route::get('network/{slug}', 'Frontend\WlinNetworkController@category')->name('wlin.list.blog');
     Route::get('wlin-members', 'Frontend\WlinNetworkController@members')->name('wlin.member');
     Route::get('wlin-partners', 'Frontend\WlinNetworkController@partners')->name('wlin.partners');
+    Route::get('wlin-world', 'Frontend\WlinNetworkController@world')->name('wlin.world');
 
     /*------------------------------------
         FRONTEND: ROUTES
