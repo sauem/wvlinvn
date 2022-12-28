@@ -88,7 +88,7 @@
                     <div class="nav-search d-none d-md-block ml-3">
                         <form action="/tim-kiem">
                             <div class="form_group">
-                                <input class="form_control" placeholder="Tìm kiếm" name="key">
+                                <input class="form_control" placeholder="{{__('Search')}}" name="key">
                                 <button class="search-btn"><i class="fas fa-search"></i></button>
                             </div>
                         </form>
