@@ -8,7 +8,7 @@ const NEXT_BTN = '<button type="button" class="slick-next"><svg width="12" heigh
 const slickDefault = {
     dots: false,
     infinite: true,
-   // autoplay: true,
+    autoplay: true,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -64,21 +64,20 @@ $('.members-carousel').slick({
 $('.brands-carousel').slick({
     ...slickDefault,
     slidesToShow: 6,
-    arrows: false,
+    arrows: true,
     responsive: [
         {
             breakpoint: 567,
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 2,
-                infinite: true,
+
             }
         },
         {
             breakpoint: 780,
             settings: {
-                slidesToShow: 3,
-                infinite: true,
+                slidesToShow: 2,
             }
         },
     ]

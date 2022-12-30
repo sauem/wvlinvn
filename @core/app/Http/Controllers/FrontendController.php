@@ -776,6 +776,7 @@ ITEM;
         $blogs = Blog::query()
             ->where(['lang' => userLang(), 'status' => 'publish'])
             ->whereJsonContains('blog_categories_id', "$category->id")
+            ->orWhere('blog_categories_id', "$category->id")
             ->paginate(16);
         $all_header_slider = HeaderSlider::where('lang', get_user_lang())->get();
         return view('frontend.v2.blog.category-news')->with([

@@ -7,7 +7,8 @@ $purple: #C70A80;
 
 .line-bottom {
   border-bottom: 2px solid $mainColor;
-  &.fit{
+
+  &.fit {
     width: fit-content;
     width: -moz-fit-content;
   }
@@ -20,9 +21,10 @@ $purple: #C70A80;
 .text-main {
   color: $mainColor;
 }
-.single-title{
+
+.single-title {
   font-size: 32px;
-  line-height:42px;
+  line-height: 42px;
 }
 
 .btn-outline-primary {
@@ -42,34 +44,41 @@ $purple: #C70A80;
   font-size: 18px;
   color: $mainColor;
   margin-top: 20px;
-  &.small-btn{
+
+  &.small-btn {
     width: fit-content;
     padding: 5px 10px;
     height: 40px;
   }
+
   &.radius-0 {
     border-radius: 0;
   }
+
   &.radius-2 {
     border-radius: 10px;
   }
 }
-.widget{
-  .title{
+
+.widget {
+  .title {
     color: white;
   }
+
   .follow-list {
     display: flex;
-    .single-flex-list{
+
+    .single-flex-list {
       display: flex;
 
-      i{
+      i {
         font-size: 32px;
         margin-right: 10px;
       }
     }
   }
 }
+
 .btn-link {
   padding: 16px 32px;
   gap: 8px;
@@ -209,7 +218,49 @@ $purple: #C70A80;
     }
   }
 }
+.brands-carousel{
+  .slick-prev {
+    z-index: 10;
+    position: absolute;
+    background: white;
+    opacity: 0.5;
+    left: -20px;
+    height: 40px;
+    width: 40px;
+    top: 0;
+    margin: auto;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
 
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .slick-next {
+    z-index: 10;
+    position: absolute;
+    right: -20px;
+    height: 40px;
+    width: 40px;
+    background: white;
+    opacity: 0.5;
+    bottom: 0;
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    top: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+}
 .videos-wrap, .members-wrap, {
   position: relative;
   padding: 0 50px;
@@ -701,7 +752,17 @@ $purple: #C70A80;
       background-color: white;
     }
   }
-  .videos-wrap, .members-wrap {
+  .brands-carousel{
+    .slick-prev {
+      left: 0;
+    }
+
+    .slick-next {
+      right: 0;
+    }
+
+  }
+  .videos-wrap, .members-wrap,  {
     padding: 0;
 
     .videos-carousel, .members-carousel {
@@ -718,5 +779,12 @@ $purple: #C70A80;
       }
     }
 
+  }
+  .list-blog {
+    .blog-item {
+      .img{
+        height: 180px;
+      }
+    }
   }
 }

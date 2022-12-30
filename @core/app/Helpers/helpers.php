@@ -2840,9 +2840,12 @@ function linkCategory($category)
     return "/$category->type/{$category->slug}";
 }
 
-function blogLink($blog)
+function blogLink($blog, $category = null)
 {
-    $category = $blog->parent ? $blog->parent->slug : '';
+    $category = $category ? $category->slug : '';
+    if (!$category) {
+        $category = $blog->parent ? $blog->parent->slug : '';
+    }
     return "/blog/$category/{$blog->slug}";
 }
 

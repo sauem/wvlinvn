@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Blog;
 use App\BlogCategory;
+use App\HeaderSlider;
 use App\Http\Controllers\Controller;
 
 class WlinNetworkController extends Controller
@@ -76,6 +77,7 @@ class WlinNetworkController extends Controller
             ->where(['type' => 'blog', 'status' => 'publish', 'lang' => userLang()])
             ->with(['blogs'])
             ->get();
-        return view('frontend.v2.blog.world-category', compact('categories'));
+        $sliders = HeaderSlider::where('lang', userLang())->get();
+        return view('frontend.v2.blog.world-category', compact('categories', 'sliders'));
     }
 }

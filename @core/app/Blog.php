@@ -14,7 +14,14 @@ class Blog extends Model implements Feedable
 
     public function category()
     {
-        return $this->hasOne(BlogCategory::class,'id','blog_categories_id');
+        return $this->hasOne(BlogCategory::class, 'id', 'blog_categories_id');
+    }
+
+    public function scopeWithCategories($query)
+    {
+        $query->addSelect(['category' => BlogCategory::select('name')
+            ->whereIn('id', 'blogs.blog_categories_id')
+        ]);
     }
 
     public function user()
@@ -30,7 +37,7 @@ class Blog extends Model implements Feedable
 
     protected $appends = ['blog_categories_id'];
 
-    public function toFeedItem() : FeedItem
+    public function toFeedItem(): FeedItem
     {
         return FeedItem::create([
             'id' => $this->id,
