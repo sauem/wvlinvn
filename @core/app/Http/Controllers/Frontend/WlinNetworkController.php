@@ -23,6 +23,10 @@ class WlinNetworkController extends Controller
             ->with(['blogs'])
             ->where(['slug' => $slug, 'status' => 'publish', 'lang' => get_user_lang()])
             ->firstOrFail();
+        $networkBlog = Blog::query()
+            ->whereJsonContains('blog_categories_id', "$network->id")
+            ->orWhere(['blog_categories_id' => $network->id])
+            ->paginate(16);
         $members = Blog::query()->where('type', '=', 'member')
             ->limit(24)
             ->orderBy('id', 'DESC')
@@ -32,7 +36,7 @@ class WlinNetworkController extends Controller
                 'breaking_news' => 1,
                 'lang' => get_user_lang()])
             ->limit(5)->get();
-        return view("frontend.v2.blog.network-blogs", compact('blogs', 'members', 'network'));
+        return view("frontend.v2.blog.network-blogs", compact('networkBlog', 'blogs', 'members', 'network'));
     }
 
     public function members($slug)

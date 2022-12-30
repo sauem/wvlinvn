@@ -21,22 +21,25 @@
                     @endforeach
                 @endif
             </div>
-            @if(!empty($network->blogs))
+            @if(!empty($networkBlog))
                 <div class="list-blog row">
-                    @foreach($network->blogs as $blog)
+                    @foreach($networkBlog as $blog)
                         <div class="col-md-6 col-12">
                             <div class="blog-item blog-big-img">
                                 <div class="row align-items-center">
                                     <div class="col-md-5">
                                         <div class="img">
-                                            <a href="{{blogLink($blog)}}">
+                                            <a href="{{blogLink($blog, $network)}}">
                                                 <img class="img-fluid" src="{{_IMG($blog->image)}}" alt=""/>
                                             </a>
                                         </div>
                                     </div>
                                     <div class="col-md-7">
-                                        <small class="text-muted"><i class="fa fa-calendar-alt mr-2"></i>{{_DATE($blog->created_at)}}</small>
-                                        <a class="name text-2" href="{{blogLink($blog)}}">{{$blog->title}}</a>
+                                        <small class="text-muted"><i
+                                                    class="fa fa-calendar-alt mr-2"></i>{{_DATE($blog->created_at)}}
+                                        </small>
+                                        <a class="name text-2"
+                                           href="{{blogLink($blog,  $network)}}">{{$blog->title}}</a>
 
                                         <p class="desc text-3">
                                             {{Str::limit($blog->excerpt, 200)}}
